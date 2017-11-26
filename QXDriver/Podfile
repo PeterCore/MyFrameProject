@@ -1,0 +1,39 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+def driver_pods
+    use_frameworks!
+    pod 'FMDB', '~> 2.7.2'
+    pod 'AFNetworking', '~> 3.1.0'
+    pod 'MJRefresh', '~> 3.1.12'
+    pod 'SocketRocket', '~> 0.5.1'
+    pod 'SVProgressHUD', '~> 2.1.2'
+    pod 'SDWebImage'
+    pod 'Masonry', '~> 1.0.2'
+    # 定位
+    pod 'AMapLocation'
+    
+    # 3D地图
+    pod 'AMap3DMap'
+    
+    # 导航
+    pod 'AMapNavi', '~> 5.0.1'
+    
+    # 搜索功能
+    pod 'AMapSearch'
+    pod 'Bugly'
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
+    
+    # 添加分享功能
+    pod 'ShareSDK3'
+    pod 'MOBFoundation'
+    pod 'ShareSDK3/ShareSDKUI'
+    pod 'ShareSDK3/ShareSDKPlatforms/QQ'
+    pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
+    pod 'iflyMSC', '~> 1.144'
+
+end
+
+target 'QXDriver' do
+   driver_pods
+end

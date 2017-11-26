@@ -1,0 +1,19 @@
+//
+//  QXDriverPrefixHeader.pch
+//  QXDriver
+//
+//  Created by zhangchun on 2017/9/11.
+//  Copyright © 2017年 千夏. All rights reserved.
+//
+
+#ifndef QXDriverPrefixHeader_pch
+#define QXDriverPrefixHeader_pch
+
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "ImportHeader.h"
+#import "Macros.h"
+
+#endif /* QXDriverPrefixHeader_pch */
