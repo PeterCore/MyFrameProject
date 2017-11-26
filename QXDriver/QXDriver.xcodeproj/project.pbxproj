@@ -13,11 +13,6 @@
 		773DB48B1F724D67005CA6D0 /* QXReceiveOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773DB48A1F724D67005CA6D0 /* QXReceiveOrderViewController.m */; };
 		77469B0C1FB031620060C689 /* sharePlatformManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77469B0B1FB031620060C689 /* sharePlatformManager.m */; };
 		77469B111FB06F3D0060C689 /* QXAMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77469B101FB06F3C0060C689 /* QXAMapView.m */; };
-		774784341FBC500E00E6615C /* LKDB+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 7747842B1FBC500E00E6615C /* LKDB+Mapping.m */; };
-		774784351FBC500E00E6615C /* LKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7747842D1FBC500E00E6615C /* LKDBHelper.m */; };
-		774784361FBC500E00E6615C /* LKDBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7747842F1FBC500E00E6615C /* LKDBUtils.m */; };
-		774784371FBC500E00E6615C /* NSObject+LKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 774784311FBC500E00E6615C /* NSObject+LKDBHelper.m */; };
-		774784381FBC500E00E6615C /* NSObject+LKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 774784331FBC500E00E6615C /* NSObject+LKModel.m */; };
 		775057C81FB447F200111955 /* QXANaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775057C71FB447F200111955 /* QXANaviView.m */; };
 		775057CB1FB4646600111955 /* car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 775057C91FB4646600111955 /* car@2x.png */; };
 		775057CC1FB4646600111955 /* car@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 775057CA1FB4646600111955 /* car@3x.png */; };
@@ -167,6 +162,12 @@
 		77DB6FD71F74E7710016AB61 /* nav_icon_back_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DB6FD51F74E7710016AB61 /* nav_icon_back_white@3x.png */; };
 		77E597571FC67B77003FE46D /* ZCMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E597561FC67B77003FE46D /* ZCMatrix.m */; };
 		77E5975A1FC8236A003FE46D /* QXFilterLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E597591FC8236A003FE46D /* QXFilterLocationManager.m */; };
+		77E597681FCB115C003FE46D /* BaseDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E5975D1FCB115C003FE46D /* BaseDB.m */; };
+		77E597691FCB115C003FE46D /* LKDB+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E5975F1FCB115C003FE46D /* LKDB+Mapping.m */; };
+		77E5976A1FCB115C003FE46D /* LKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E597611FCB115C003FE46D /* LKDBHelper.m */; };
+		77E5976B1FCB115C003FE46D /* LKDBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E597631FCB115C003FE46D /* LKDBUtils.m */; };
+		77E5976C1FCB115C003FE46D /* NSObject+LKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E597651FCB115C003FE46D /* NSObject+LKDBHelper.m */; };
+		77E5976D1FCB115C003FE46D /* NSObject+LKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E597671FCB115C003FE46D /* NSObject+LKModel.m */; };
 		77E7F7AB1FA870E9008D3353 /* QXBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7F7AA1FA870E9008D3353 /* QXBaseRequest.m */; };
 		D9AE7D2B1477E8E72000056C /* Pods_QXDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362D8C6EABD15A14B993BB21 /* Pods_QXDriver.framework */; };
 /* End PBXBuildFile section */
@@ -203,16 +204,6 @@
 		77469B0B1FB031620060C689 /* sharePlatformManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sharePlatformManager.m; sourceTree = "<group>"; };
 		77469B0F1FB06F3C0060C689 /* QXAMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXAMapView.h; sourceTree = "<group>"; };
 		77469B101FB06F3C0060C689 /* QXAMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXAMapView.m; sourceTree = "<group>"; };
-		7747842A1FBC500E00E6615C /* LKDB+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKDB+Mapping.h"; sourceTree = "<group>"; };
-		7747842B1FBC500E00E6615C /* LKDB+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKDB+Mapping.m"; sourceTree = "<group>"; };
-		7747842C1FBC500E00E6615C /* LKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBHelper.h; sourceTree = "<group>"; };
-		7747842D1FBC500E00E6615C /* LKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBHelper.m; sourceTree = "<group>"; };
-		7747842E1FBC500E00E6615C /* LKDBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBUtils.h; sourceTree = "<group>"; };
-		7747842F1FBC500E00E6615C /* LKDBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBUtils.m; sourceTree = "<group>"; };
-		774784301FBC500E00E6615C /* NSObject+LKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LKDBHelper.h"; sourceTree = "<group>"; };
-		774784311FBC500E00E6615C /* NSObject+LKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKDBHelper.m"; sourceTree = "<group>"; };
-		774784321FBC500E00E6615C /* NSObject+LKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LKModel.h"; sourceTree = "<group>"; };
-		774784331FBC500E00E6615C /* NSObject+LKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKModel.m"; sourceTree = "<group>"; };
 		775057C61FB447F200111955 /* QXANaviView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXANaviView.h; sourceTree = "<group>"; };
 		775057C71FB447F200111955 /* QXANaviView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXANaviView.m; sourceTree = "<group>"; };
 		775057C91FB4646600111955 /* car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car@2x.png"; sourceTree = "<group>"; };
@@ -491,6 +482,18 @@
 		77E597561FC67B77003FE46D /* ZCMatrix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCMatrix.m; sourceTree = "<group>"; };
 		77E597581FC8236A003FE46D /* QXFilterLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXFilterLocationManager.h; sourceTree = "<group>"; };
 		77E597591FC8236A003FE46D /* QXFilterLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXFilterLocationManager.m; sourceTree = "<group>"; };
+		77E5975C1FCB115C003FE46D /* BaseDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDB.h; sourceTree = "<group>"; };
+		77E5975D1FCB115C003FE46D /* BaseDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDB.m; sourceTree = "<group>"; };
+		77E5975E1FCB115C003FE46D /* LKDB+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKDB+Mapping.h"; sourceTree = "<group>"; };
+		77E5975F1FCB115C003FE46D /* LKDB+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKDB+Mapping.m"; sourceTree = "<group>"; };
+		77E597601FCB115C003FE46D /* LKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBHelper.h; sourceTree = "<group>"; };
+		77E597611FCB115C003FE46D /* LKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBHelper.m; sourceTree = "<group>"; };
+		77E597621FCB115C003FE46D /* LKDBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBUtils.h; sourceTree = "<group>"; };
+		77E597631FCB115C003FE46D /* LKDBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBUtils.m; sourceTree = "<group>"; };
+		77E597641FCB115C003FE46D /* NSObject+LKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LKDBHelper.h"; sourceTree = "<group>"; };
+		77E597651FCB115C003FE46D /* NSObject+LKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKDBHelper.m"; sourceTree = "<group>"; };
+		77E597661FCB115C003FE46D /* NSObject+LKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LKModel.h"; sourceTree = "<group>"; };
+		77E597671FCB115C003FE46D /* NSObject+LKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKModel.m"; sourceTree = "<group>"; };
 		77E7F7A91FA870E9008D3353 /* QXBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXBaseRequest.h; sourceTree = "<group>"; };
 		77E7F7AA1FA870E9008D3353 /* QXBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXBaseRequest.m; sourceTree = "<group>"; };
 		A5D243632DDEC2C8D6A6D85F /* Pods-QXDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QXDriver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QXDriver/Pods-QXDriver.debug.xcconfig"; sourceTree = "<group>"; };
@@ -784,24 +787,6 @@
 			path = "map(地图)";
 			sourceTree = "<group>";
 		};
-		774784291FBC500E00E6615C /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				7747842A1FBC500E00E6615C /* LKDB+Mapping.h */,
-				7747842B1FBC500E00E6615C /* LKDB+Mapping.m */,
-				7747842C1FBC500E00E6615C /* LKDBHelper.h */,
-				7747842D1FBC500E00E6615C /* LKDBHelper.m */,
-				7747842E1FBC500E00E6615C /* LKDBUtils.h */,
-				7747842F1FBC500E00E6615C /* LKDBUtils.m */,
-				774784301FBC500E00E6615C /* NSObject+LKDBHelper.h */,
-				774784311FBC500E00E6615C /* NSObject+LKDBHelper.m */,
-				774784321FBC500E00E6615C /* NSObject+LKModel.h */,
-				774784331FBC500E00E6615C /* NSObject+LKModel.m */,
-			);
-			name = Helper;
-			path = "../../../../../../Downloads/LKDBHelper-SQLite-ORM-master/LKDBHelper/Helper";
-			sourceTree = "<group>";
-		};
 		7767E5B61FB2A14A00E5EDD4 /* source */ = {
 			isa = PBXGroup;
 			children = (
@@ -942,7 +927,7 @@
 		77C3A7611F666C640079EBA5 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				774784291FBC500E00E6615C /* Helper */,
+				77E5975B1FCB115C003FE46D /* Helper */,
 				77469B091FB031160060C689 /* sharePlatform */,
 				779510CC1FAC177900EC804A /* iflyMsc */,
 				77C3B6CE1F9F43E500083380 /* NetWorking */,
@@ -1494,6 +1479,26 @@
 			path = NetWorking;
 			sourceTree = "<group>";
 		};
+		77E5975B1FCB115C003FE46D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				77E5975C1FCB115C003FE46D /* BaseDB.h */,
+				77E5975D1FCB115C003FE46D /* BaseDB.m */,
+				77E5975E1FCB115C003FE46D /* LKDB+Mapping.h */,
+				77E5975F1FCB115C003FE46D /* LKDB+Mapping.m */,
+				77E597601FCB115C003FE46D /* LKDBHelper.h */,
+				77E597611FCB115C003FE46D /* LKDBHelper.m */,
+				77E597621FCB115C003FE46D /* LKDBUtils.h */,
+				77E597631FCB115C003FE46D /* LKDBUtils.m */,
+				77E597641FCB115C003FE46D /* NSObject+LKDBHelper.h */,
+				77E597651FCB115C003FE46D /* NSObject+LKDBHelper.m */,
+				77E597661FCB115C003FE46D /* NSObject+LKModel.h */,
+				77E597671FCB115C003FE46D /* NSObject+LKModel.m */,
+			);
+			name = Helper;
+			path = ../../../../MyFrameProject/QXDriver/QXDriver/common/Helper;
+			sourceTree = "<group>";
+		};
 		973359B5CAA3129E075E8B63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1783,6 +1788,7 @@
 				77C3A7C61F6671A50079EBA5 /* MJRefreshBackGifFooter.m in Sources */,
 				77C3A8491F6682E60079EBA5 /* NSMutableAttributedString+ZCHelper.m in Sources */,
 				77C3B03D1F6B65FE0079EBA5 /* QXBaseResponse.m in Sources */,
+				77E5976A1FCB115C003FE46D /* LKDBHelper.m in Sources */,
 				77C61B6D1F6EBCC600700375 /* QXIdentityCardRequest.m in Sources */,
 				779510E11FAC451C00EC804A /* PcmPlayer.m in Sources */,
 				77C3A7701F6670EE0079EBA5 /* TPKeyboardAvoidingScrollView.m in Sources */,
@@ -1792,6 +1798,7 @@
 				77C3B01E1F6917830079EBA5 /* AESCipher.m in Sources */,
 				77C3A7F91F6673D60079EBA5 /* NSObject+MJKeyValue.m in Sources */,
 				77C3B6E81F9F43E500083380 /* ZCRequestTask.m in Sources */,
+				77E597681FCB115C003FE46D /* BaseDB.m in Sources */,
 				77C3A7CA1F6671A50079EBA5 /* MJRefreshNormalHeader.m in Sources */,
 				77C3B0001F6913DD0079EBA5 /* SVProgressHUD+HUB.m in Sources */,
 				779510CB1FAB03D500EC804A /* QXPushNotificationManager.m in Sources */,
@@ -1801,13 +1808,12 @@
 				77C3B6E31F9F43E500083380 /* RxTCache.m in Sources */,
 				77C3B01B1F6917830079EBA5 /* NSData+QXUtils.m in Sources */,
 				77C3A7FB1F6673D60079EBA5 /* NSString+MJExtension.m in Sources */,
-				774784371FBC500E00E6615C /* NSObject+LKDBHelper.m in Sources */,
 				77DB6FD31F74E21B0016AB61 /* QXSliderBlock.m in Sources */,
+				77E5976D1FCB115C003FE46D /* NSObject+LKModel.m in Sources */,
 				77C3A7F81F6673D60079EBA5 /* NSObject+MJCoding.m in Sources */,
 				77C3A83A1F667E700079EBA5 /* GVUserDefaults+FEProperties.m in Sources */,
 				77C61B731F6EC70D00700375 /* QXVaildCodeViewController.m in Sources */,
 				7767E5A91FB186F800E5EDD4 /* QXCLLocationManager.m in Sources */,
-				774784341FBC500E00E6615C /* LKDB+Mapping.m in Sources */,
 				77C3A7BF1F6671A50079EBA5 /* MJRefreshBackFooter.m in Sources */,
 				77C3A83B1F667E700079EBA5 /* GVUserDefaults.m in Sources */,
 				773DB46C1F724AEE005CA6D0 /* QXHomeViewController.m in Sources */,
@@ -1816,6 +1822,7 @@
 				77C3AFE21F68E3350079EBA5 /* QXTextField.m in Sources */,
 				77E597571FC67B77003FE46D /* ZCMatrix.m in Sources */,
 				77C3B0081F6916C10079EBA5 /* QXNetWorking.m in Sources */,
+				77E5976C1FCB115C003FE46D /* NSObject+LKDBHelper.m in Sources */,
 				77C3A7721F6670EE0079EBA5 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				77C3A7C71F6671A50079EBA5 /* MJRefreshBackNormalFooter.m in Sources */,
 				77620AE81F7614EC00458040 /* QXWebSocketManager.m in Sources */,
@@ -1824,7 +1831,6 @@
 				77C3A7D01F6671A50079EBA5 /* UIView+MJExtension.m in Sources */,
 				77C3A7C11F6671A50079EBA5 /* MJRefreshFooter.m in Sources */,
 				77C61B761F6ECBEC00700375 /* VCTextField.m in Sources */,
-				774784351FBC500E00E6615C /* LKDBHelper.m in Sources */,
 				77C3B6E71F9F43E500083380 /* ZCNetWorkConfiguer.m in Sources */,
 				77C3A7C21F6671A50079EBA5 /* MJRefreshHeader.m in Sources */,
 				77C3B6E51F9F43E500083380 /* ZCConfiguerRequest.m in Sources */,
@@ -1838,7 +1844,6 @@
 				77E7F7AB1FA870E9008D3353 /* QXBaseRequest.m in Sources */,
 				77C3A7CD1F6671A50079EBA5 /* MJRefreshConst.m in Sources */,
 				775058C61FB9A63900111955 /* QXTrackCorrectManager.m in Sources */,
-				774784381FBC500E00E6615C /* NSObject+LKModel.m in Sources */,
 				77C3AFFA1F690A4B0079EBA5 /* NSString+ZCHelper.m in Sources */,
 				77C3A8321F667A0F0079EBA5 /* ZCBaseViewController.m in Sources */,
 				77C3B6E91F9F43E500083380 /* ZCRequestTaskOperation.m in Sources */,
@@ -1854,9 +1859,10 @@
 				77C3AFF21F6906BC0079EBA5 /* UIImage+Additions.m in Sources */,
 				77C3A7CF1F6671A50079EBA5 /* UIScrollView+MJRefresh.m in Sources */,
 				77C3A8341F667A0F0079EBA5 /* ZCNavgtionbarOverlay.m in Sources */,
-				774784361FBC500E00E6615C /* LKDBUtils.m in Sources */,
+				77E5976B1FCB115C003FE46D /* LKDBUtils.m in Sources */,
 				77B77BD01FC2C7D20030EE14 /* ZCKalmanAlgorithm.m in Sources */,
 				77C3A83F1F6680160079EBA5 /* EBCardCollectionViewLayout.m in Sources */,
+				77E597691FCB115C003FE46D /* LKDB+Mapping.m in Sources */,
 				77C61B941F6F9A5D00700375 /* QXVaildAccountRequest.m in Sources */,
 				77C3B01F1F6917830079EBA5 /* Base64.m in Sources */,
 				77C3A8331F667A0F0079EBA5 /* ZCLabel.m in Sources */,
