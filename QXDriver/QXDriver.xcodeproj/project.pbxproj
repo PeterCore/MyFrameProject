@@ -171,6 +171,12 @@
 		77E598CB1FCCFEFD003FE46D /* QXGMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E598CA1FCCFEFD003FE46D /* QXGMapView.m */; };
 		77E598CE1FCD09B0003FE46D /* QXGRoutePlanRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E598CD1FCD09B0003FE46D /* QXGRoutePlanRequest.m */; };
 		77E598D11FCD0D1F003FE46D /* QXFetchRoutePlanHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E598D01FCD0D1F003FE46D /* QXFetchRoutePlanHandle.m */; };
+		77E59C1A1FCE82EA003FE46D /* default_navi_route_endpoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C141FCE82E8003FE46D /* default_navi_route_endpoint.png */; };
+		77E59C1B1FCE82EA003FE46D /* default_navi_route_endpoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C151FCE82E9003FE46D /* default_navi_route_endpoint@2x.png */; };
+		77E59C1C1FCE82EA003FE46D /* default_navi_route_endpoint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C161FCE82E9003FE46D /* default_navi_route_endpoint@3x.png */; };
+		77E59C1D1FCE82EA003FE46D /* default_navi_route_startpoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C171FCE82E9003FE46D /* default_navi_route_startpoint.png */; };
+		77E59C1E1FCE82EA003FE46D /* default_navi_route_startpoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C181FCE82E9003FE46D /* default_navi_route_startpoint@2x.png */; };
+		77E59C1F1FCE82EA003FE46D /* default_navi_route_startpoint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C191FCE82EA003FE46D /* default_navi_route_startpoint@3x.png */; };
 		77E7F7AB1FA870E9008D3353 /* QXBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7F7AA1FA870E9008D3353 /* QXBaseRequest.m */; };
 		D9AE7D2B1477E8E72000056C /* Pods_QXDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362D8C6EABD15A14B993BB21 /* Pods_QXDriver.framework */; };
 /* End PBXBuildFile section */
@@ -503,6 +509,12 @@
 		77E598CD1FCD09B0003FE46D /* QXGRoutePlanRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXGRoutePlanRequest.m; sourceTree = "<group>"; };
 		77E598CF1FCD0D1F003FE46D /* QXFetchRoutePlanHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXFetchRoutePlanHandle.h; sourceTree = "<group>"; };
 		77E598D01FCD0D1F003FE46D /* QXFetchRoutePlanHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXFetchRoutePlanHandle.m; sourceTree = "<group>"; };
+		77E59C141FCE82E8003FE46D /* default_navi_route_endpoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_navi_route_endpoint.png; sourceTree = "<group>"; };
+		77E59C151FCE82E9003FE46D /* default_navi_route_endpoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_navi_route_endpoint@2x.png"; sourceTree = "<group>"; };
+		77E59C161FCE82E9003FE46D /* default_navi_route_endpoint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_navi_route_endpoint@3x.png"; sourceTree = "<group>"; };
+		77E59C171FCE82E9003FE46D /* default_navi_route_startpoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_navi_route_startpoint.png; sourceTree = "<group>"; };
+		77E59C181FCE82E9003FE46D /* default_navi_route_startpoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_navi_route_startpoint@2x.png"; sourceTree = "<group>"; };
+		77E59C191FCE82EA003FE46D /* default_navi_route_startpoint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_navi_route_startpoint@3x.png"; sourceTree = "<group>"; };
 		77E7F7A91FA870E9008D3353 /* QXBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXBaseRequest.h; sourceTree = "<group>"; };
 		77E7F7AA1FA870E9008D3353 /* QXBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXBaseRequest.m; sourceTree = "<group>"; };
 		A5D243632DDEC2C8D6A6D85F /* Pods-QXDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QXDriver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QXDriver/Pods-QXDriver.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1520,6 +1532,12 @@
 		77E59C131FCE4DFF003FE46D /* google */ = {
 			isa = PBXGroup;
 			children = (
+				77E59C141FCE82E8003FE46D /* default_navi_route_endpoint.png */,
+				77E59C151FCE82E9003FE46D /* default_navi_route_endpoint@2x.png */,
+				77E59C161FCE82E9003FE46D /* default_navi_route_endpoint@3x.png */,
+				77E59C171FCE82E9003FE46D /* default_navi_route_startpoint.png */,
+				77E59C181FCE82E9003FE46D /* default_navi_route_startpoint@2x.png */,
+				77E59C191FCE82EA003FE46D /* default_navi_route_startpoint@3x.png */,
 				77E598C91FCCFEFD003FE46D /* QXGMapView.h */,
 				77E598CA1FCCFEFD003FE46D /* QXGMapView.m */,
 				77E598CF1FCD0D1F003FE46D /* QXFetchRoutePlanHandle.h */,
@@ -1682,16 +1700,20 @@
 				7767E5B91FB2A16100E5EDD4 /* public_pic_qidian@3x.png in Resources */,
 				77C3B03A1F6A8C6A0079EBA5 /* public_icon_shenfenzheng@3x.png in Resources */,
 				77DB6FD71F74E7710016AB61 /* nav_icon_back_white@3x.png in Resources */,
+				77E59C1C1FCE82EA003FE46D /* default_navi_route_endpoint@3x.png in Resources */,
 				77DB6FD61F74E7710016AB61 /* nav_icon_back_white@2x.png in Resources */,
+				77E59C1D1FCE82EA003FE46D /* default_navi_route_startpoint.png in Resources */,
 				77C3A8511F66879A0079EBA5 /* public_icon_phone@3x.png in Resources */,
 				77C3AFE51F6901C00079EBA5 /* public_icon_kejian@2x.png in Resources */,
 				77C3B0391F6A8C6A0079EBA5 /* public_icon_shenfenzheng@2x.png in Resources */,
+				77E59C1F1FCE82EA003FE46D /* default_navi_route_startpoint@3x.png in Resources */,
 				77C3B0351F6A89E90079EBA5 /* nav_icon_back_gray@2x.png in Resources */,
 				77C3A8551F66883A0079EBA5 /* public_icon_bukejian@3x.png in Resources */,
 				77C3A73B1F6661910079EBA5 /* LaunchScreen.storyboard in Resources */,
 				7767E5BA1FB2A16100E5EDD4 /* public_pic_qidian@2x.png in Resources */,
 				7767E5BE1FB2A17C00E5EDD4 /* public_pic_zhongdian@3x.png in Resources */,
 				77DB6FCF1F74B4B80016AB61 /* nav_logo_light@2x.png in Resources */,
+				77E59C1A1FCE82EA003FE46D /* default_navi_route_endpoint.png in Resources */,
 				775057CC1FB4646600111955 /* car@3x.png in Resources */,
 				77C3A8501F66879A0079EBA5 /* public_icon_phone@2x.png in Resources */,
 				77C3A7381F6661910079EBA5 /* Assets.xcassets in Resources */,
@@ -1703,6 +1725,8 @@
 				77C3A7CC1F6671A50079EBA5 /* MJRefresh.bundle in Resources */,
 				77C3B0361F6A89E90079EBA5 /* nav_icon_back_gray@3x.png in Resources */,
 				77DB6FCC1F74AF1C0016AB61 /* nav_logo_gray@3x.png in Resources */,
+				77E59C1E1FCE82EA003FE46D /* default_navi_route_startpoint@2x.png in Resources */,
+				77E59C1B1FCE82EA003FE46D /* default_navi_route_endpoint@2x.png in Resources */,
 				77C3A7361F6661910079EBA5 /* Main.storyboard in Resources */,
 				77C3A84D1F6687200079EBA5 /* public_icon_mima@3x.png in Resources */,
 			);

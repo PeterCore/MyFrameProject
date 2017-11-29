@@ -47,9 +47,9 @@
 @property(nonatomic,strong)NSDictionary *distance;
 @property(nonatomic,strong)NSDictionary *duration;
 @property(nonatomic,strong)NSString     *end_address;
-@property(nonatomic,strong)NSDictionary *end_location;
+@property(nonatomic,strong)QXLocation   *end_location;
 @property(nonatomic,strong)NSString     *start_address;
-@property(nonatomic,strong)NSDictionary *start_location;
+@property(nonatomic,strong)QXLocation   *start_location;
 @property(nonatomic,strong)NSArray      *steps;
 @property(nonatomic,strong)NSArray      *traffic_speed_entry;
 @property(nonatomic,strong)NSArray      *via_waypoint;

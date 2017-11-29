@@ -39,7 +39,17 @@
 -(void)addAnnotationsWithOriginCoordinateAnddestCoordinate:(CLLocationCoordinate2D)origin dest:(CLLocationCoordinate2D)dest{
     
     [self __setAnnotationWithLocation:origin dest:dest];
-    [self __planRouteWithLocation:origin dest:dest];
+    [self __planRouteWithLocation:origin dest:dest coordinates:^(NSMutableArray *coordinates) {
+        GMSMutablePath *path = [GMSMutablePath path];
+        for (QXLocation *loaction in coordinates) {
+            CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(loaction.lat, loaction.lng);
+            [path addCoordinate:coordinate];
+        }
+        GMSPolyline *routeLine = [GMSPolyline polylineWithPath:path];
+        routeLine.strokeWidth = 2.0f;
+        routeLine.map =self.mapView;
+
+    }];
     
 }
 
@@ -48,17 +58,22 @@
     
     GMSMarker *originMark = [GMSMarker markerWithPosition:origin];
     originMark.infoWindowAnchor = CGPointMake(0.5, 0.5);
-    originMark.icon = [UIImage imageNamed:@"house"];
+    originMark.icon = [UIImage imageNamed:@"default_navi_route_startpoint"];
     originMark.map = self.mapView;
     
     GMSMarker *destMark = [GMSMarker markerWithPosition:dest];
     destMark.infoWindowAnchor = CGPointMake(0.5, 0.5);
-    destMark.icon = [UIImage imageNamed:@"house"];
+    destMark.icon = [UIImage imageNamed:@"default_navi_route_endpoint"];
     destMark.map = self.mapView;
+    
+    CLLocationCoordinate2D target = origin;
+    self.mapView.camera = [GMSCameraPosition cameraWithTarget:target zoom:13];
     
 }
 
--(void)__planRouteWithLocation:(CLLocationCoordinate2D)origin dest:(CLLocationCoordinate2D)dest{
+-(void)__planRouteWithLocation:(CLLocationCoordinate2D)origin
+                          dest:(CLLocationCoordinate2D)dest
+                   coordinates:(void(^)(NSMutableArray *coordinates))stepsBlock{
     NSString *originLocation = [NSString stringWithFormat:@"%.20f,%.20f",origin.latitude,origin.longitude];
     NSString *destLocation   = [NSString stringWithFormat:@"%.20f,%.20f",dest.latitude,dest.longitude];
     
@@ -72,7 +87,28 @@
         
     } success:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+            QXGRouteResponse *routeResponse = (QXGRouteResponse*)responseObject;
+            if ([routeResponse.status isEqualToString:@"OK"]) {
+                if (routeResponse.routes.count) {
+                    QXRouteItem *routeItem = routeResponse.routes[0];
+                    if (routeItem.legs.count) {
+                        NSMutableArray *coordinates = [NSMutableArray array];
+                        QXLegsItem *legItem = routeItem.legs[0];
+                        [coordinates addObject:legItem.start_location];
+                        for (QXStepsItem *item in legItem.steps) {
+                            [coordinates addObject:item.start_location];
+                            [coordinates addObject:item.end_location];
+                        }
+                        [coordinates addObject:legItem.end_location];
+                        if (stepsBlock) {
+                            stepsBlock(coordinates);
+                        }
+                    }
+                }
+            }
+            else{
+                
+            }
         });
         
     } failure:^(NSError * _Nonnull error) {
