@@ -9,7 +9,7 @@
 #import "QXTrackCorrectManager.h"
 #import <MAMapKit/MAMapKit.h>
 #import <MAMapKit/MAGeometry.h>
-static CGFloat MaxSpeed = 22;
+static CGFloat MaxSpeed = 22.0;
 static CGFloat MinSpeed = 1.0;
 
 typedef void(^filterJumpLocationBlock)(QXTraceLocation *filterLocation);
@@ -67,7 +67,9 @@ static QXTrackCorrectManager *__manager = nil;
     if (traceLocation.latitude >0 && traceLocation.longitude>0) {
         //是否是第一个点
         //[QXTraceLocation insertToDB:traceLocation];
-        self.filterJumpLocationBlock = traceLocationBlock;
+        if (!self.filterJumpLocationBlock) {
+            self.filterJumpLocationBlock = traceLocationBlock;
+        }
         NSInteger count = [QXTraceLocation rowCountWithWhere:nil];
         if (!count) {
             [self.traceLocations addObject:traceLocation];
@@ -127,12 +129,10 @@ static QXTrackCorrectManager *__manager = nil;
         }
         if (!self.w2TraceLocation) {
             long offsetTimeMils = [traceLocation.currentDate timeIntervalSince1970] - [self.w1TraceLocation.currentDate timeIntervalSince1970];
-            long offsetSeconds = offsetTimeMils+1;
+            long offsetSeconds = offsetTimeMils;
             MAMapPoint startPoint = MAMapPointForCoordinate(CLLocationCoordinate2DMake(self.w1TraceLocation.latitude , self.w1TraceLocation.longitude));
             MAMapPoint endPoint = MAMapPointForCoordinate(CLLocationCoordinate2DMake(traceLocation.latitude , traceLocation.longitude));
             float distance = MAMetersBetweenMapPoints(startPoint, endPoint);
-            //float speed = distance/offsetSeconds;
-            NSLog(@"distance is %.2f/n",distance);
             long maxDistance = offsetSeconds*MaxSpeed;
             if (distance > maxDistance) {
                 self.w2TraceLocation = traceLocation;
@@ -148,6 +148,7 @@ static QXTrackCorrectManager *__manager = nil;
                 w1temp.timestamp     = [NSDate dateWithTimeIntervalSince1970:timeVal];
                 w1temp.currentDate   = traceLocation.currentDate;
                 w1temp.speed         = traceLocation.speed;
+                w1temp.accuracy      = traceLocation.accuracy;
                 self.w1TraceLocation = w1temp;
                 _wCount++;
                 if(self.w1TraceLocations.count > 3){
@@ -176,11 +177,11 @@ static QXTrackCorrectManager *__manager = nil;
 #pragma mark ---- w2TraceLocation is not null
         else{
             long offsetTimeMils = [traceLocation.currentDate timeIntervalSince1970] - [self.w2TraceLocation.currentDate timeIntervalSince1970];
-            long offsetSeconds = offsetTimeMils+1;
+            long offsetSeconds = offsetTimeMils;
             MAMapPoint startPoint = MAMapPointForCoordinate(CLLocationCoordinate2DMake(self.w2TraceLocation.latitude , self.w2TraceLocation.longitude));
             MAMapPoint endPoint = MAMapPointForCoordinate(CLLocationCoordinate2DMake(traceLocation.latitude , traceLocation.longitude));
             float distance = MAMetersBetweenMapPoints(startPoint, endPoint);
-            long maxDistance = offsetSeconds*22;
+            long maxDistance = offsetSeconds*16;
             NSLog(@"distance is %.2f/n",distance);
             if (distance > maxDistance) {
                 [self.w2TraceLocations removeAllObjects];
@@ -197,6 +198,7 @@ static QXTrackCorrectManager *__manager = nil;
                 w2temp.timestamp     = [NSDate dateWithTimeIntervalSince1970:timeVal];
                 w2temp.currentDate   = traceLocation.currentDate;
                 w2temp.speed         = traceLocation.speed;
+                w2temp.accuracy      = traceLocation.accuracy;
                 self.w2TraceLocation = w2temp;
                 
                 if (self.w2TraceLocations.count > 4) {

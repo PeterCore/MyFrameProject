@@ -48,13 +48,18 @@
     //[[QXTrackCorrectManager shareManager] removeALLTraceLocations];
     LKDBHelper* globalHelper = [QXTraceLocation getUsingLKDBHelper];
 
-    [[QXCLLocationManager shareManager] startLocationUpdating:^(QXLocationInfo * _Nonnull locationInfo) {
-        
-    } failuerBlock:^(NSString * _Nonnull errorMessage) {
-        
-    }];
+//    [[QXCLLocationManager shareManager] startLocationUpdating:^(QXLocationInfo * _Nonnull locationInfo) {
+//        
+//    } failuerBlock:^(NSString * _Nonnull errorMessage) {
+//
+//    }];
     [[ZCNetWorkConfiguer shareNetWorkConfiguer] configuerPrefix:@{APIBASEURL:[QXConfiguration shareManager].httpPrefixUrl}];
-    [[QXCLLocationManager shareManager] registerCLLocationApiWithKey:[QXConfiguration shareManager].appGDMapKey];
+    if ([QXConfiguration shareManager].mapType == MAPTYPE_GOOGLE) {
+        [[QXCLLocationManager shareManager] registerGGCLLocationApiWithKey:[QXConfiguration shareManager].appGGMapKey];
+    }
+    else
+       [[QXCLLocationManager shareManager] registerGDCLLocationApiWithKey:[QXConfiguration shareManager].appGDMapKey];
+
     [self setup];
     
     return YES;

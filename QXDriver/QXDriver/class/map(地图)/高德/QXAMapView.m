@@ -65,6 +65,8 @@
 -(void)test{
     int _endIndexPath = 0;
     QXTraceLocation *_endLocation;
+    //NSMutableArray *accuracy
+    NSMutableArray *traceLocationAcc = [QXTraceLocation searchWithWhere:[NSString stringWithFormat:@"accuracy != %d",65]];
     NSMutableArray *traceLocations = [QXTraceLocation searchWithWhere:nil];
     NSMutableArray *lines = [NSMutableArray array];
     for (int i = _endIndexPath; i < traceLocations.count; i++) {

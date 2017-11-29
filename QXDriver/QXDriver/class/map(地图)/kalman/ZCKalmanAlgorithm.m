@@ -64,29 +64,34 @@ static ZCKalmanAlgorithm *__manager = nil;
     return self;
 }
 
--(void)initKalman:(QXTraceLocation*)location{
-    
+
+-(void)__confiugerStrengthWith:(QXTraceLocation*)location{
     SIGNALSTRENGTH strength = [QXTrackCorrectManager gpsStrengthWith:location.accuracy];
     switch (strength) {
         case SIGNALSTRENGTH_BEST:
-             _sigma = 3.0725;
-             _rValue = 1.0;
+            _sigma = 3.0725;
+            _rValue = 1.0;
             break;
         case SIGNALSTRENGTH_BETTER:
-            _sigma = 3.0725;
-            _rValue = 1.0;
+            _sigma = 3.0625;
+            _rValue = 1.3;
             break;
         case SIGNALSTRENGTH_AVERAGER:
-            _sigma = 3.0725;
-            _rValue = 1.0;
+            _sigma = 0.0725;
+            _rValue = 18.0;
             break;
         case SIGNALSTRENGTH_BAD:
-            _sigma = 3.0725;
-            _rValue = 1.0;
+            _sigma = 0.0625;
+            _rValue = 29.0;
             break;
         default:
             break;
     }
+}
+
+-(void)initKalman:(QXTraceLocation*)location{
+    
+    [self __confiugerStrengthWith:location];
     
     self.previousMeasureTime = location.timestamp;
     self.previousLocation = location;
@@ -134,6 +139,8 @@ static ZCKalmanAlgorithm *__manager = nil;
 }
 
 -(QXTraceLocation*)processState:(QXTraceLocation*)currentLocation{
+    [self __confiugerStrengthWith:currentLocation];
+
     NSDate *newMeasureTime = currentLocation.timestamp;
     double newMeasureTimeSeconds = [newMeasureTime timeIntervalSince1970];
     double lastMeasureTimeSeconds = [self.previousMeasureTime timeIntervalSince1970];
@@ -204,6 +211,7 @@ static ZCKalmanAlgorithm *__manager = nil;
     currentlocation.latitude = lat;
     currentlocation.longitude = lon;
     currentlocation.altitude = altitude;
+    currentlocation.accuracy = self.previousLocation.accuracy;
     currentlocation.timestamp = self.previousMeasureTime;
     return currentlocation;
     

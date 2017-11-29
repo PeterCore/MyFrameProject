@@ -47,13 +47,13 @@ static QXCLLocationManager *__manager = nil;
             self.amapLocationManager.distanceFilter = 1.0; // 3米发起一次定位
             self.amapLocationManager.locationTimeout = 10.f;
             self.amapLocationManager.locatingWithReGeocode = YES; // 返回逆地理信息
-            self.amapLocationManager.desiredAccuracy = 10;
+            self.amapLocationManager.desiredAccuracy = 20;
         }
         else{
             self.coreLocationManager = [[CLLocationManager alloc] init];
             self.coreLocationManager.delegate = self;
             self.coreLocationManager.distanceFilter = 1;
-            self.coreLocationManager.desiredAccuracy = 10;
+            self.coreLocationManager.desiredAccuracy = 20;
         }
     }
     return self;
@@ -70,6 +70,7 @@ static QXCLLocationManager *__manager = nil;
             if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0) {
                 self.coreLocationManager.allowsBackgroundLocationUpdates = YES;
             }
+            self.coreLocationManager.allowsBackgroundLocationUpdates = YES;
             [self.coreLocationManager startUpdatingLocation];
             [self.coreLocationManager startUpdatingHeading];
             
@@ -110,13 +111,42 @@ static QXCLLocationManager *__manager = nil;
  *
  *注册地图
  */
--(void)registerCLLocationApiWithKey:(NSString *)key{
+-(void)registerGDCLLocationApiWithKey:(NSString *)key{
     
     [AMapServices sharedServices].apiKey = key;
-    [self startLocationUpdating:nil failuerBlock:nil];
+    //[self startLocationUpdating:nil failuerBlock:nil];
 
 }
 
+-(void)registerGGCLLocationApiWithKey:(NSString *)serviceKey{
+    [GMSServices provideAPIKey:serviceKey];
+    //[self startLocationUpdating:nil failuerBlock:nil];
+
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation{
+    
+    if (self.locationInfo == nil) {
+        self.locationInfo = [[QXLocationInfo alloc] init];
+        self.locationInfo.userLocation = newLocation;
+    }
+    
+    self.locationInfo.speed = newLocation.speed;
+    self.locationInfo.altitude = newLocation.altitude;
+    self.locationInfo.userLocation = newLocation;
+    if (newLocation){
+        if (self.locationblock) {
+            self.locationblock(self.locationInfo);
+        }
+    }
+    else{
+        if (self.failuerblock) {
+            self.failuerblock(@"");
+        }
+    }
+}
 
 #pragma mark - AMapLocationManagerDelegate
 - (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location reGeocode:(AMapLocationReGeocode *)reGeocode

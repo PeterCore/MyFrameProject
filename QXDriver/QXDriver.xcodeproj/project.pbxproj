@@ -168,6 +168,9 @@
 		77E5976B1FCB115C003FE46D /* LKDBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E597631FCB115C003FE46D /* LKDBUtils.m */; };
 		77E5976C1FCB115C003FE46D /* NSObject+LKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E597651FCB115C003FE46D /* NSObject+LKDBHelper.m */; };
 		77E5976D1FCB115C003FE46D /* NSObject+LKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E597671FCB115C003FE46D /* NSObject+LKModel.m */; };
+		77E598CB1FCCFEFD003FE46D /* QXGMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E598CA1FCCFEFD003FE46D /* QXGMapView.m */; };
+		77E598CE1FCD09B0003FE46D /* QXGRoutePlanRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E598CD1FCD09B0003FE46D /* QXGRoutePlanRequest.m */; };
+		77E598D11FCD0D1F003FE46D /* QXFetchRoutePlanHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E598D01FCD0D1F003FE46D /* QXFetchRoutePlanHandle.m */; };
 		77E7F7AB1FA870E9008D3353 /* QXBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7F7AA1FA870E9008D3353 /* QXBaseRequest.m */; };
 		D9AE7D2B1477E8E72000056C /* Pods_QXDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362D8C6EABD15A14B993BB21 /* Pods_QXDriver.framework */; };
 /* End PBXBuildFile section */
@@ -494,6 +497,12 @@
 		77E597651FCB115C003FE46D /* NSObject+LKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKDBHelper.m"; sourceTree = "<group>"; };
 		77E597661FCB115C003FE46D /* NSObject+LKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LKModel.h"; sourceTree = "<group>"; };
 		77E597671FCB115C003FE46D /* NSObject+LKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKModel.m"; sourceTree = "<group>"; };
+		77E598C91FCCFEFD003FE46D /* QXGMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXGMapView.h; sourceTree = "<group>"; };
+		77E598CA1FCCFEFD003FE46D /* QXGMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXGMapView.m; sourceTree = "<group>"; };
+		77E598CC1FCD09B0003FE46D /* QXGRoutePlanRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXGRoutePlanRequest.h; sourceTree = "<group>"; };
+		77E598CD1FCD09B0003FE46D /* QXGRoutePlanRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXGRoutePlanRequest.m; sourceTree = "<group>"; };
+		77E598CF1FCD0D1F003FE46D /* QXFetchRoutePlanHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXFetchRoutePlanHandle.h; sourceTree = "<group>"; };
+		77E598D01FCD0D1F003FE46D /* QXFetchRoutePlanHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXFetchRoutePlanHandle.m; sourceTree = "<group>"; };
 		77E7F7A91FA870E9008D3353 /* QXBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXBaseRequest.h; sourceTree = "<group>"; };
 		77E7F7AA1FA870E9008D3353 /* QXBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXBaseRequest.m; sourceTree = "<group>"; };
 		A5D243632DDEC2C8D6A6D85F /* Pods-QXDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QXDriver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QXDriver/Pods-QXDriver.debug.xcconfig"; sourceTree = "<group>"; };
@@ -769,14 +778,10 @@
 		77469B0E1FB06BB90060C689 /* map(地图) */ = {
 			isa = PBXGroup;
 			children = (
+				77E59C131FCE4DFF003FE46D /* google */,
+				77E59C121FCE4DDE003FE46D /* 高德 */,
 				77B77BC91FC26CBD0030EE14 /* kalman */,
 				7767E5B61FB2A14A00E5EDD4 /* source */,
-				77469B0F1FB06F3C0060C689 /* QXAMapView.h */,
-				77469B101FB06F3C0060C689 /* QXAMapView.m */,
-				7767E5D71FB2B75000E5EDD4 /* QXARoute.h */,
-				7767E5D81FB2B75100E5EDD4 /* QXARoute.m */,
-				775057C61FB447F200111955 /* QXANaviView.h */,
-				775057C71FB447F200111955 /* QXANaviView.m */,
 				77E597581FC8236A003FE46D /* QXFilterLocationManager.h */,
 				77E597591FC8236A003FE46D /* QXFilterLocationManager.m */,
 				7767E5A71FB186F800E5EDD4 /* QXCLLocationManager.h */,
@@ -1499,6 +1504,32 @@
 			path = ../../../../MyFrameProject/QXDriver/QXDriver/common/Helper;
 			sourceTree = "<group>";
 		};
+		77E59C121FCE4DDE003FE46D /* 高德 */ = {
+			isa = PBXGroup;
+			children = (
+				77469B0F1FB06F3C0060C689 /* QXAMapView.h */,
+				77469B101FB06F3C0060C689 /* QXAMapView.m */,
+				7767E5D71FB2B75000E5EDD4 /* QXARoute.h */,
+				7767E5D81FB2B75100E5EDD4 /* QXARoute.m */,
+				775057C61FB447F200111955 /* QXANaviView.h */,
+				775057C71FB447F200111955 /* QXANaviView.m */,
+			);
+			path = "高德";
+			sourceTree = "<group>";
+		};
+		77E59C131FCE4DFF003FE46D /* google */ = {
+			isa = PBXGroup;
+			children = (
+				77E598C91FCCFEFD003FE46D /* QXGMapView.h */,
+				77E598CA1FCCFEFD003FE46D /* QXGMapView.m */,
+				77E598CF1FCD0D1F003FE46D /* QXFetchRoutePlanHandle.h */,
+				77E598D01FCD0D1F003FE46D /* QXFetchRoutePlanHandle.m */,
+				77E598CC1FCD09B0003FE46D /* QXGRoutePlanRequest.h */,
+				77E598CD1FCD09B0003FE46D /* QXGRoutePlanRequest.m */,
+			);
+			path = google;
+			sourceTree = "<group>";
+		};
 		973359B5CAA3129E075E8B63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1795,6 +1826,7 @@
 				77C3A7301F6661910079EBA5 /* AppDelegate.m in Sources */,
 				77C3A7C01F6671A50079EBA5 /* MJRefreshComponent.m in Sources */,
 				775A72EE1FBEC98C00D99465 /* MapTestViewController.m in Sources */,
+				77E598CB1FCCFEFD003FE46D /* QXGMapView.m in Sources */,
 				77C3B01E1F6917830079EBA5 /* AESCipher.m in Sources */,
 				77C3A7F91F6673D60079EBA5 /* NSObject+MJKeyValue.m in Sources */,
 				77C3B6E81F9F43E500083380 /* ZCRequestTask.m in Sources */,
@@ -1812,6 +1844,7 @@
 				77E5976D1FCB115C003FE46D /* NSObject+LKModel.m in Sources */,
 				77C3A7F81F6673D60079EBA5 /* NSObject+MJCoding.m in Sources */,
 				77C3A83A1F667E700079EBA5 /* GVUserDefaults+FEProperties.m in Sources */,
+				77E598D11FCD0D1F003FE46D /* QXFetchRoutePlanHandle.m in Sources */,
 				77C61B731F6EC70D00700375 /* QXVaildCodeViewController.m in Sources */,
 				7767E5A91FB186F800E5EDD4 /* QXCLLocationManager.m in Sources */,
 				77C3A7BF1F6671A50079EBA5 /* MJRefreshBackFooter.m in Sources */,
@@ -1837,6 +1870,7 @@
 				773DB4791F724B9C005CA6D0 /* QXMineViewController.m in Sources */,
 				77C3A7F21F6673D60079EBA5 /* MJExtensionConst.m in Sources */,
 				77C3B01A1F6917830079EBA5 /* NSArray+QXUtils.m in Sources */,
+				77E598CE1FCD09B0003FE46D /* QXGRoutePlanRequest.m in Sources */,
 				7767E5D91FB2B75100E5EDD4 /* QXARoute.m in Sources */,
 				77C3A7C41F6671A50079EBA5 /* MJRefreshAutoNormalFooter.m in Sources */,
 				77C3B6E61F9F43E500083380 /* ZCHttpRequestManager.m in Sources */,

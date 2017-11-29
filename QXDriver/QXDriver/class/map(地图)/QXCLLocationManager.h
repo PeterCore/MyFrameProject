@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AMapLocationKit/AMapLocationKit.h>
 #import <AMapFoundationKit/AMapServices.h>
-
+#import <GoogleMaps/GoogleMaps.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -37,7 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 +(instancetype)shareManager;
--(void)registerCLLocationApiWithKey:(NSString*)key;
+-(void)registerGDCLLocationApiWithKey:(NSString*)key;
+-(void)registerGGCLLocationApiWithKey:(NSString*)serviceKey;
 -(void)startLocationUpdating:(void(^)(QXLocationInfo *locationInfo))locationBlock
         failuerBlock:(void(^)(NSString *errorMessage))failuerBlock;
 -(void)stopUpdating;

@@ -78,7 +78,9 @@ typedef NS_ENUM(NSInteger , SYSTEM_MESSAGETYPE){
 @property(nonatomic ,readonly,copy)NSString *wechatAppId;
 @property(nonatomic ,readonly,copy)NSString *wechatappSecret;
 @property(nonatomic ,readonly,copy)NSString *appGDMapKey;
+@property(nonatomic ,readonly,copy)NSString *appGGMapKey;
 @property(nonatomic ,readonly,strong)UIImage *driveNaviCarImage;
+
 +(instancetype)shareManager;
 
 @end

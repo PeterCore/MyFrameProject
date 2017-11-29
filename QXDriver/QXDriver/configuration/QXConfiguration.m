@@ -24,9 +24,6 @@ typedef enum : NSUInteger {
 @property(nonatomic ,readwrite,copy)NSString *httpPrefixUrl;
 @property(nonatomic ,readwrite,copy)NSString *wsPrefixUrl;
 @property(nonatomic ,readwrite,copy)NSString *monetaryUnit;
-@property(nonatomic ,readwrite,assign)QXDRIVERLOGINTYPE loginType;
-@property(nonatomic ,readwrite,assign)MAPTYPE mapType;
-@property(nonatomic ,readwrite,assign)PROJECTTYPE projectType;
 @property(nonatomic ,readwrite,copy)NSString *appid;
 @property(nonatomic ,readwrite,copy)NSString *ifMSCKey;
 @property(nonatomic ,readwrite,copy)NSString *shareQQAppId;
@@ -34,6 +31,11 @@ typedef enum : NSUInteger {
 @property(nonatomic ,readwrite,copy)NSString *wechatAppId;
 @property(nonatomic ,readwrite,copy)NSString *wechatappSecret;
 @property(nonatomic ,readwrite,copy)NSString *appGDMapKey;
+@property(nonatomic ,readwrite,copy)NSString *appGGMapKey;
+
+@property(nonatomic ,readwrite,assign)QXDRIVERLOGINTYPE loginType;
+@property(nonatomic ,readwrite,assign)MAPTYPE mapType;
+@property(nonatomic ,readwrite,assign)PROJECTTYPE projectType;
 @property(nonatomic ,readwrite,strong)UIImage *driveNaviCarImage;
 @end
 
@@ -67,7 +69,7 @@ static QXConfiguration *configuration = nil;
  
 #pragma mark ----约约
     self.monetaryUnit = @"元";
-    self.mapType = MAPTYPE_GAODE;
+    self.mapType = MAPTYPE_GOOGLE;
     self.httpPrefixUrl = @"http://5000.gr2a2739.summersoft.ali-sh.goodrain.net:10080/";
     self.wsPrefixUrl = @"ws://gr46e996.summersoft.ali-sh-s1.goodrain.net:20630";
     self.loginType = QXDRIVERLOGINTYPE_SPECIALCAR;
@@ -79,6 +81,7 @@ static QXConfiguration *configuration = nil;
     self.wechatAppId = @"wx9f9f6543465f0030";
     self.wechatappSecret = @"7a3bbbb98cf3e2aadada45a0a8f391d1";
     self.appGDMapKey = @"a7c51c6c425d00ef2e1eed562ca6a8c3";
+    self.appGGMapKey = @"AIzaSyAkNmuF7mpY8Fnyi12ihgljubE-VbrNXu4";
     self.driveNaviCarImage = [UIImage imageNamed:@"car"];
 }
 @end
