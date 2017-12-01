@@ -6,8 +6,8 @@
 //  Copyright © 2017年 千夏. All rights reserved.
 //
 
-#import "ZCBaseViewController.h"
+#import "QXBaseViewController.h"
 
-@interface MapTestViewController : ZCBaseViewController
+@interface MapTestViewController : QXBaseViewController
 
 @end

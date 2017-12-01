@@ -6,12 +6,12 @@
 //  Copyright © 2017年 千夏. All rights reserved.
 //
 
-#import "ZCBaseViewController.h"
+#import "QXBaseViewController.h"
 #import "QXTrackCorrectManager.h"
 #import "QXCLLocationManager.h"
 #import "QXANaviView.h"
 #import "QXAMapView.h"
 
-@interface NavigtionTestViewController : ZCBaseViewController
+@interface NavigtionTestViewController : QXBaseViewController
 
 @end

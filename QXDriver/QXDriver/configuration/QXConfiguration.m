@@ -81,7 +81,7 @@ static QXConfiguration *configuration = nil;
     self.wechatAppId = @"wx9f9f6543465f0030";
     self.wechatappSecret = @"7a3bbbb98cf3e2aadada45a0a8f391d1";
     self.appGDMapKey = @"a7c51c6c425d00ef2e1eed562ca6a8c3";
-    self.appGGMapKey = @"AIzaSyAkNmuF7mpY8Fnyi12ihgljubE-VbrNXu4";
-    self.driveNaviCarImage = [UIImage imageNamed:@"car"];
+    self.appGGMapKey = @"AIzaSyBEN9SgD1J69MHQE5QHf_-3hTwRk4urtVo";
+    self.driveNaviCarImage = [UIImage imageNamed:@"zhuanche_map_icon_car"];
 }
 @end

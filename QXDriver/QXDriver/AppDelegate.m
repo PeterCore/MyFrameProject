@@ -12,6 +12,7 @@
 #import "QXCLLocationManager.h"
 #import "QXTrackCorrectManager.h"
 #import "NSObject+LKDBHelper.h"
+#import "QXBaseViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -42,17 +43,30 @@
 
 }
 
+-(void)launchLocation{
+    
+    NSRecursiveLock *locationLock = [[NSRecursiveLock alloc] init];
+    [[QXCLLocationManager shareManager] startLocationUpdating:^(QXLocationInfo * _Nonnull locationInfo) {
+        for (id controller in [QXCLLocationManager shareManager].controllers) {
+             [locationLock lock];
+             ((void (*)(id, SEL, QXLocationInfo*,NSString*))objc_msgSend)(((QXBaseViewController*)controller), @selector(fetchCurrentLocation:failuerError:), locationInfo,@"");
+
+             [locationLock unlock];
+        }
+       
+        
+        
+    } failuerBlock:^(NSString * _Nonnull errorMessage) {
+        
+    }];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //[[QXTrackCorrectManager shareManager] removeALLTraceLocations];
     LKDBHelper* globalHelper = [QXTraceLocation getUsingLKDBHelper];
 
-//    [[QXCLLocationManager shareManager] startLocationUpdating:^(QXLocationInfo * _Nonnull locationInfo) {
-//        
-//    } failuerBlock:^(NSString * _Nonnull errorMessage) {
-//
-//    }];
+    
     [[ZCNetWorkConfiguer shareNetWorkConfiguer] configuerPrefix:@{APIBASEURL:[QXConfiguration shareManager].httpPrefixUrl}];
     if ([QXConfiguration shareManager].mapType == MAPTYPE_GOOGLE) {
         [[QXCLLocationManager shareManager] registerGGCLLocationApiWithKey:[QXConfiguration shareManager].appGGMapKey];
@@ -61,10 +75,14 @@
        [[QXCLLocationManager shareManager] registerGDCLLocationApiWithKey:[QXConfiguration shareManager].appGDMapKey];
 
     [self setup];
+    [self launchLocation];
     
     return YES;
 }
 
+-(void)lanuchLocation{
+    
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

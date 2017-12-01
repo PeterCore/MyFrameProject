@@ -27,6 +27,7 @@ static QXCLLocationManager *__manager = nil;
 @property (nonatomic , strong) QXLocationInfo *locationInfo;
 @property (nonatomic , copy)void (^locationblock)(QXLocationInfo *locationInfo);
 @property (nonatomic , copy)void (^failuerblock)(NSString *errorMessage);
+@property (nonatomic ,readwrite ,strong) NSMutableSet *controllers;
 @end
 
 @implementation QXCLLocationManager
@@ -41,10 +42,11 @@ static QXCLLocationManager *__manager = nil;
 
 -(instancetype)init{
     if(self = [super init]){
+        self.controllers = [NSMutableSet set];
         if ([QXConfiguration shareManager].mapType == MAPTYPE_GAODE) {
             self.amapLocationManager = [[AMapLocationManager alloc] init];
             self.amapLocationManager.delegate = self;
-            self.amapLocationManager.distanceFilter = 1.0; // 3米发起一次定位
+            self.amapLocationManager.distanceFilter = 3.0; // 3米发起一次定位
             self.amapLocationManager.locationTimeout = 10.f;
             self.amapLocationManager.locatingWithReGeocode = YES; // 返回逆地理信息
             self.amapLocationManager.desiredAccuracy = 20;
@@ -52,11 +54,24 @@ static QXCLLocationManager *__manager = nil;
         else{
             self.coreLocationManager = [[CLLocationManager alloc] init];
             self.coreLocationManager.delegate = self;
-            self.coreLocationManager.distanceFilter = 1;
+            self.coreLocationManager.distanceFilter = 0.1;
             self.coreLocationManager.desiredAccuracy = 20;
         }
     }
     return self;
+}
+
+
+-(void)addControllers:(id)controller{
+    
+    [self.controllers addObject:controller];
+}
+
+-(void)removeControllers:(id)controller{
+    if ([self.controllers containsObject:controller]) {
+        [self.controllers removeObject:controller];
+
+    }
 }
 
 -(void)startLocationUpdating:(void(^)(QXLocationInfo *locationInfo))locationBlock
@@ -78,13 +93,17 @@ static QXCLLocationManager *__manager = nil;
             if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0) {
                 self.amapLocationManager.allowsBackgroundLocationUpdates = YES;
             }
+
             self.amapLocationManager.allowsBackgroundLocationUpdates = YES;
             [self.amapLocationManager startUpdatingLocation]; // 开启持续定位
         }
     }
     else{
+//        QXLocationInfo *location = [[QXLocationInfo alloc] init];
+//        NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadServerResponse userInfo:@{NSLocalizedDescriptionKey:@"定位失败"}];
+//        location.error = error;
         if (self.failuerblock) {
-            self.failuerblock(@"");
+            self.failuerblock(@"定位失败");
         }
     }
     
@@ -132,7 +151,7 @@ static QXCLLocationManager *__manager = nil;
         self.locationInfo = [[QXLocationInfo alloc] init];
         self.locationInfo.userLocation = newLocation;
     }
-    
+    self.locationInfo.direction = newLocation.course;
     self.locationInfo.speed = newLocation.speed;
     self.locationInfo.altitude = newLocation.altitude;
     self.locationInfo.userLocation = newLocation;
@@ -143,7 +162,7 @@ static QXCLLocationManager *__manager = nil;
     }
     else{
         if (self.failuerblock) {
-            self.failuerblock(@"");
+            self.failuerblock(@"定位失败");
         }
     }
 }
@@ -165,6 +184,8 @@ static QXCLLocationManager *__manager = nil;
     self.locationInfo.speed = location.speed;
     self.locationInfo.altitude = location.altitude;
     self.locationInfo.userLocation = location;
+    self.locationInfo.direction = location.course;;
+
     if (reGeocode){
         if (self.locationblock) {
             self.locationblock(self.locationInfo);
@@ -172,7 +193,7 @@ static QXCLLocationManager *__manager = nil;
     }
     else{
         if (self.failuerblock) {
-            self.failuerblock(@"");
+            self.failuerblock(@"定位失败");
         }
     }
     

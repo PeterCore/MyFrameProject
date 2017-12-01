@@ -23,6 +23,9 @@
     return POSTMethod;
 }
 
+-(ApplicationType)applicationType{
+    return ApplicationType_FORM;
+}
 
 @end
 

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QXLocationInfo : NSObject
 @property (nonatomic , strong) CLLocation *userLocation; // 经纬度坐标
+@property (nonatomic , assign) CLLocationDirection direction;//朝向
 @property (nonatomic , copy) NSString *formattedAddress; // 全称 例如:福建省厦门市思明区塔埔路靠近中国民生银行(厦门观音山支行)
 @property (nonatomic , copy) NSString *country; // 国家 例如: 中国
 @property (nonatomic , copy) NSString *province; // 省份 例如: 福建省
@@ -30,10 +31,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic , assign) double altitude; // 海拔高度
 @property(nonatomic , assign) double speed; // 瞬时行驶速度
 @property(nonatomic , assign) double distance;
+@property(nonatomic , strong) NSError *error;
 @end
 
 @class QXLocationInfo;
 @interface QXCLLocationManager : NSObject
+@property (nonatomic ,readonly ,strong) NSMutableSet *controllers;
 
 
 +(instancetype)shareManager;
@@ -42,7 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)startLocationUpdating:(void(^)(QXLocationInfo *locationInfo))locationBlock
         failuerBlock:(void(^)(NSString *errorMessage))failuerBlock;
 -(void)stopUpdating;
-
+-(void)addControllers:(id)controller;
+-(void)removeControllers:(id)controller;
 -(QXLocationInfo*)fetchCurrentLocation;
 @end
 NS_ASSUME_NONNULL_END

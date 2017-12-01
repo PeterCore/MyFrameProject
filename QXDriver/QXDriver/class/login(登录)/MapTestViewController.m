@@ -13,6 +13,7 @@
 
 @interface MapTestViewController ()
 @property(nonatomic,strong)QXLocationInfo *mylocationinfo;
+@property(nonatomic,strong)QXGMapView *gmap;
 @end
 
 @implementation MapTestViewController
@@ -21,38 +22,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    QXGMapView *gmap = [[QXGMapView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:gmap];
+    self.gmap = [[QXGMapView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.gmap];
     
+}
 
-    
-    @weakify(self);
-    [[QXCLLocationManager shareManager] startLocationUpdating:^(QXLocationInfo * locationInfo) {
-        @strongify(self);
-        if (!self.mylocationinfo) {
-            self.mylocationinfo = locationInfo;
-            [[QXCLLocationManager shareManager] stopUpdating];
-            CLLocationCoordinate2D orgin = CLLocationCoordinate2DMake(locationInfo.userLocation.coordinate.latitude, locationInfo.userLocation.coordinate.longitude);
-            CLLocationCoordinate2D dest = CLLocationCoordinate2DMake(24.473523, 118.19098099999999);
-            [gmap addAnnotationsWithOriginCoordinateAnddestCoordinate:orgin dest:dest];
-            
-//            AMapGeoPoint *orignPoint = [AMapGeoPoint locationWithLatitude:orgin.latitude longitude:orgin.longitude];
-//            AMapGeoPoint *destPoint = [AMapGeoPoint locationWithLatitude:dest.latitude longitude:dest.longitude];
-//            QXANaviView *naviView = [[QXANaviView alloc] initWithFrame:self.view.bounds];
-//            [self.view addSubview:naviView];
-//            [naviView calculateDriveRouteWithStartPoints:@[orignPoint] endPoints:@[destPoint] wayPoints:nil drivingStrategy:AMapNaviDrivingStrategySingleDefault];
-        }
-        
-        
-        
-    } failuerBlock:^(NSString * _Nonnull errorMessage) {
-        
-    }];
-    
-    
-    
-//    QXAMapView *mapView = [[QXAMapView alloc] initWithFrame:self.view.bounds];
-//    [self.view addSubview:mapView];
+-(void)fetchCurrentLocation:(QXLocationInfo *)locationInfo failuerError:(NSString *)failuerError{
+    if (!self.mylocationinfo) {
+        self.mylocationinfo = locationInfo;
+        [[QXCLLocationManager shareManager] stopUpdating];
+        CLLocationCoordinate2D orgin = CLLocationCoordinate2DMake(locationInfo.userLocation.coordinate.latitude, locationInfo.userLocation.coordinate.longitude);
+        CLLocationCoordinate2D dest = CLLocationCoordinate2DMake(24.473523, 118.19098099999999);
+        [self.gmap addAnnotationsWithOriginCoordinateAnddestCoordinate:orgin dest:dest];
+        [self.gmap updateCurrentLocation:locationInfo];
+
+        //            AMapGeoPoint *orignPoint = [AMapGeoPoint locationWithLatitude:orgin.latitude longitude:orgin.longitude];
+        //            AMapGeoPoint *destPoint = [AMapGeoPoint locationWithLatitude:dest.latitude longitude:dest.longitude];
+        //            QXANaviView *naviView = [[QXANaviView alloc] initWithFrame:self.view.bounds];
+        //            [self.view addSubview:naviView];
+        //            [naviView calculateDriveRouteWithStartPoints:@[orignPoint] endPoints:@[destPoint] wayPoints:nil drivingStrategy:AMapNaviDrivingStrategySingleDefault];
+    }
+    else{
+        [self.gmap updateCurrentLocation:locationInfo];
+    }
+}
+-(void)dealloc{
+    [[QXCLLocationManager shareManager]removeControllers:self];
 }
 
 -(void)navigationleftClick:(NSInteger)index{

@@ -17,6 +17,7 @@
 #import "NSObject+LKDBHelper.h"
 #import "MapTestViewController.h"
 #import "NavigtionTestViewController.h"
+#import "MapTestViewController.h"
 @interface QXDLoginViewController ()<UITextFieldDelegate>{
 
 }
@@ -86,6 +87,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     //[self __layout];
     [self layoutMapView];
+    //[self launchLocation];
 }
 
 -(void)senderClick:(UIButton*)sender{
@@ -93,14 +95,35 @@
         [[QXTrackCorrectManager shareManager] removeALLTraceLocations];
     }
     else if(sender.tag == 2){
-        [self.navigationController pushViewController:[[MapTestViewController alloc] init] animated:YES];
+        MapTestViewController *mapTestVc = [[MapTestViewController alloc] init];
+        [[QXCLLocationManager shareManager] addControllers:mapTestVc];
+        [self.navigationController pushViewController:mapTestVc animated:YES];
     }
     else if (sender.tag == 3){
-        [self.navigationController pushViewController:[[NavigtionTestViewController alloc] init] animated:YES];
-
+        NavigtionTestViewController *NavTestVc = [[NavigtionTestViewController alloc] init];
+        [[QXCLLocationManager shareManager] addControllers:NavTestVc];
+        [self.navigationController pushViewController:NavTestVc animated:YES];
     }
     
 }
+
+//-(void)launchLocation{
+//    
+//    NSRecursiveLock *locationLock = [[NSRecursiveLock alloc] init];
+//    [[QXCLLocationManager shareManager] startLocationUpdating:^(QXLocationInfo * _Nonnull locationInfo) {
+//        for (id controller in [QXCLLocationManager shareManager].controllers) {
+//            //[locationLock lock];
+//            ((void (*)(id, SEL, QXLocationInfo*,NSString*))objc_msgSend)(controller, @selector(fetchCurrentLocation:failuerError:), locationInfo,@"");
+//            
+//            //[locationLock unlock];
+//        }
+//        
+//        
+//        
+//    } failuerBlock:^(NSString * _Nonnull errorMessage) {
+//        
+//    }];
+//}
 
 
 -(void)layoutMapView{
@@ -201,7 +224,8 @@
                 [self.navigationController pushViewController:homeVc animated:YES];
                 QXUserDefaults.uid = loginResponse.data.uuid;
                 QXUserDefaults.token = loginResponse.data.token;
-                
+                MapTestViewController *mapVc = [[MapTestViewController alloc] init];
+                [self.navigationController pushViewController:mapVc animated:YES];
             }
             else{
                 //[SVProgressHUD showErrorView:<#(NSString *)#>]

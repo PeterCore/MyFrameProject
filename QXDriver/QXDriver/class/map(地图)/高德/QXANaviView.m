@@ -45,10 +45,10 @@
     self.driveView = [[AMapNaviDriveView alloc]initWithFrame:self.bounds];
     [self.driveView setShowUIElements:NO];
     [self.driveView setCarImage:[QXConfiguration shareManager].driveNaviCarImage];
-    [self.driveView setMapZoomLevel:18.0];
+    //[self.driveView setMapZoomLevel:18.0];
     [self.driveView setCameraDegree:0.0];
     [self.driveView setShowUIElements:NO];
-    self.driveView.trackingMode = AMapNaviViewTrackingModeMapNorth;
+    self.driveView.trackingMode = AMapNaviViewTrackingModeCarNorth;
     self.driveView.showMode = AMapNaviDriveViewShowModeCarPositionLocked;
     self.driveView.delegate = self;
     
@@ -90,8 +90,8 @@
 
 - (void)driveManagerOnCalculateRouteSuccess:(AMapNaviDriveManager *)driveManager
 {
-    //[self.driveManager startEmulatorNavi];
-    [self.driveManager startGPSNavi];
+    [self.driveManager startEmulatorNavi];
+    //[self.driveManager startGPSNavi];
 
 }
 // 发生错误

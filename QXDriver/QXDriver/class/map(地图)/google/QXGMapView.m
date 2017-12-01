@@ -10,6 +10,7 @@
 #import "QXFetchRoutePlanHandle.h"
 @interface QXGMapView()<GMSMapViewDelegate>
 @property(nonatomic,strong)GMSMapView *mapView;
+@property(nonatomic,strong)GMSMarker  *currentMarker;
 
 @end
 @implementation QXGMapView
@@ -26,6 +27,8 @@
     if (self = [super initWithFrame:frame]) {
         self.mapView = [[GMSMapView alloc] initWithFrame:self.bounds];
         self.mapView.delegate = self;
+        self.mapView.settings.compassButton = YES;
+        [self.mapView.settings setAllGesturesEnabled:YES];
         [self addSubview:self.mapView];
     }
     return self;
@@ -33,6 +36,24 @@
 
 -(void)didMoveToSuperview{
     [super didMoveToSuperview];
+   /* [[QXCLLocationManager shareManager] startLocationUpdating:^(QXLocationInfo * _Nonnull locationInfo) {
+        if (!self.currentMarker) {
+            self.currentMarker = [GMSMarker markerWithPosition:locationInfo.userLocation.coordinate];
+            self.currentMarker.infoWindowAnchor = CGPointMake(0.5, 0.5);
+            self.currentMarker.icon = [UIImage imageNamed:@"car"];
+            self.currentMarker.map = self.mapView;
+        }
+        else{
+            self.currentMarker.position = locationInfo.userLocation.coordinate;
+        }
+        
+    } failuerBlock:^(NSString * _Nonnull errorMessage) {
+        
+    }];*/
+    
+}
+
+-(void)__updateCurrentPosition:(CLLocationCoordinate2D)coordinate2D{
     
 }
 
@@ -53,6 +74,28 @@
     
 }
 
+-(void)updateCurrentLocation:(QXLocationInfo*)locationInfo{
+    if (!self.currentMarker) {
+        self.currentMarker = [GMSMarker markerWithPosition:locationInfo.userLocation.coordinate];
+        self.currentMarker.infoWindowAnchor = CGPointMake(0.5, 0.5);
+        UIImage *icon = [UIImage imageNamed:@"zhuanche_map_icon_car"];
+        self.currentMarker.iconView = [[UIImageView alloc] initWithImage:icon];
+        //self.currentMarker.tracksViewChanges = NO;
+        //self.currentMarker.icon = icon;
+        self.currentMarker.map = self.mapView;
+    }
+    else{
+        self.currentMarker.position = locationInfo.userLocation.coordinate;
+    }
+    CLLocationDirection angle = -45;
+    double radius = angle / 180.0 * M_PI;
+
+    [UIView animateWithDuration:1.0 animations:^{
+        self.currentMarker.iconView.transform = CGAffineTransformMakeRotation(-radius);
+
+    }];
+}
+
 
 -(void)__setAnnotationWithLocation:(CLLocationCoordinate2D)origin dest:(CLLocationCoordinate2D)dest {
     
@@ -66,8 +109,8 @@
     destMark.icon = [UIImage imageNamed:@"default_navi_route_endpoint"];
     destMark.map = self.mapView;
     
-    CLLocationCoordinate2D target = origin;
-    self.mapView.camera = [GMSCameraPosition cameraWithTarget:target zoom:13];
+    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:origin coordinate:dest];
+    self.mapView.camera = [self.mapView cameraForBounds:bounds insets:UIEdgeInsetsMake(50, 50, 230, 50)];
     
 }
 

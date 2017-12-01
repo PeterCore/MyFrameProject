@@ -177,6 +177,10 @@
 		77E59C1D1FCE82EA003FE46D /* default_navi_route_startpoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C171FCE82E9003FE46D /* default_navi_route_startpoint.png */; };
 		77E59C1E1FCE82EA003FE46D /* default_navi_route_startpoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C181FCE82E9003FE46D /* default_navi_route_startpoint@2x.png */; };
 		77E59C1F1FCE82EA003FE46D /* default_navi_route_startpoint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C191FCE82EA003FE46D /* default_navi_route_startpoint@3x.png */; };
+		77E59C231FCFFAD5003FE46D /* QXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E59C221FCFFAD5003FE46D /* QXBaseViewController.m */; };
+		77E59C271FD061AB003FE46D /* zhuanche_map_icon_car.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C241FD061AA003FE46D /* zhuanche_map_icon_car.png */; };
+		77E59C281FD061AB003FE46D /* zhuanche_map_icon_car@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C251FD061AA003FE46D /* zhuanche_map_icon_car@3x.png */; };
+		77E59C291FD061AB003FE46D /* zhuanche_map_icon_car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C261FD061AA003FE46D /* zhuanche_map_icon_car@2x.png */; };
 		77E7F7AB1FA870E9008D3353 /* QXBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7F7AA1FA870E9008D3353 /* QXBaseRequest.m */; };
 		D9AE7D2B1477E8E72000056C /* Pods_QXDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362D8C6EABD15A14B993BB21 /* Pods_QXDriver.framework */; };
 /* End PBXBuildFile section */
@@ -515,6 +519,11 @@
 		77E59C171FCE82E9003FE46D /* default_navi_route_startpoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_navi_route_startpoint.png; sourceTree = "<group>"; };
 		77E59C181FCE82E9003FE46D /* default_navi_route_startpoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_navi_route_startpoint@2x.png"; sourceTree = "<group>"; };
 		77E59C191FCE82EA003FE46D /* default_navi_route_startpoint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_navi_route_startpoint@3x.png"; sourceTree = "<group>"; };
+		77E59C211FCFFAD5003FE46D /* QXBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXBaseViewController.h; sourceTree = "<group>"; };
+		77E59C221FCFFAD5003FE46D /* QXBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXBaseViewController.m; sourceTree = "<group>"; };
+		77E59C241FD061AA003FE46D /* zhuanche_map_icon_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhuanche_map_icon_car.png; sourceTree = "<group>"; };
+		77E59C251FD061AA003FE46D /* zhuanche_map_icon_car@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuanche_map_icon_car@3x.png"; sourceTree = "<group>"; };
+		77E59C261FD061AA003FE46D /* zhuanche_map_icon_car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuanche_map_icon_car@2x.png"; sourceTree = "<group>"; };
 		77E7F7A91FA870E9008D3353 /* QXBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXBaseRequest.h; sourceTree = "<group>"; };
 		77E7F7AA1FA870E9008D3353 /* QXBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXBaseRequest.m; sourceTree = "<group>"; };
 		A5D243632DDEC2C8D6A6D85F /* Pods-QXDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QXDriver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QXDriver/Pods-QXDriver.debug.xcconfig"; sourceTree = "<group>"; };
@@ -809,6 +818,9 @@
 			children = (
 				775057C91FB4646600111955 /* car@2x.png */,
 				775057CA1FB4646600111955 /* car@3x.png */,
+				77E59C241FD061AA003FE46D /* zhuanche_map_icon_car.png */,
+				77E59C261FD061AA003FE46D /* zhuanche_map_icon_car@2x.png */,
+				77E59C251FD061AA003FE46D /* zhuanche_map_icon_car@3x.png */,
 				7767E5B81FB2A16100E5EDD4 /* public_pic_qidian@2x.png */,
 				7767E5B71FB2A16100E5EDD4 /* public_pic_qidian@3x.png */,
 				7767E5BB1FB2A17C00E5EDD4 /* public_pic_zhongdian@2x.png */,
@@ -927,6 +939,7 @@
 		77C3A7601F666C640079EBA5 /* class */ = {
 			isa = PBXGroup;
 			children = (
+				77E59C201FCFFA9E003FE46D /* BaseViewController */,
 				77469B0E1FB06BB90060C689 /* map(地图) */,
 				779510C81FAB037800EC804A /* locationOrderNotification(本地通知) */,
 				773DB4831F724D1F005CA6D0 /* receiveOrder(接单) */,
@@ -1548,6 +1561,15 @@
 			path = google;
 			sourceTree = "<group>";
 		};
+		77E59C201FCFFA9E003FE46D /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				77E59C211FCFFAD5003FE46D /* QXBaseViewController.h */,
+				77E59C221FCFFAD5003FE46D /* QXBaseViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
 		973359B5CAA3129E075E8B63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1700,6 +1722,7 @@
 				7767E5B91FB2A16100E5EDD4 /* public_pic_qidian@3x.png in Resources */,
 				77C3B03A1F6A8C6A0079EBA5 /* public_icon_shenfenzheng@3x.png in Resources */,
 				77DB6FD71F74E7710016AB61 /* nav_icon_back_white@3x.png in Resources */,
+				77E59C271FD061AB003FE46D /* zhuanche_map_icon_car.png in Resources */,
 				77E59C1C1FCE82EA003FE46D /* default_navi_route_endpoint@3x.png in Resources */,
 				77DB6FD61F74E7710016AB61 /* nav_icon_back_white@2x.png in Resources */,
 				77E59C1D1FCE82EA003FE46D /* default_navi_route_startpoint.png in Resources */,
@@ -1714,7 +1737,9 @@
 				7767E5BE1FB2A17C00E5EDD4 /* public_pic_zhongdian@3x.png in Resources */,
 				77DB6FCF1F74B4B80016AB61 /* nav_logo_light@2x.png in Resources */,
 				77E59C1A1FCE82EA003FE46D /* default_navi_route_endpoint.png in Resources */,
+				77E59C281FD061AB003FE46D /* zhuanche_map_icon_car@3x.png in Resources */,
 				775057CC1FB4646600111955 /* car@3x.png in Resources */,
+				77E59C291FD061AB003FE46D /* zhuanche_map_icon_car@2x.png in Resources */,
 				77C3A8501F66879A0079EBA5 /* public_icon_phone@2x.png in Resources */,
 				77C3A7381F6661910079EBA5 /* Assets.xcassets in Resources */,
 				77DB6FD01F74B4B80016AB61 /* nav_logo_light@3x.png in Resources */,
@@ -1912,6 +1937,7 @@
 				77C3A76F1F6670EE0079EBA5 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				773DB4821F724C9E005CA6D0 /* QXOrderListViewController.m in Sources */,
 				77C3A7FA1F6673D60079EBA5 /* NSObject+MJProperty.m in Sources */,
+				77E59C231FCFFAD5003FE46D /* QXBaseViewController.m in Sources */,
 				77C3A7F51F6673D60079EBA5 /* MJPropertyKey.m in Sources */,
 				77C3B01C1F6917830079EBA5 /* NSDictionary+QXUtils.m in Sources */,
 				77C3AFF21F6906BC0079EBA5 /* UIImage+Additions.m in Sources */,
