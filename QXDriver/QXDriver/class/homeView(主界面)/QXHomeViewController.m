@@ -43,8 +43,9 @@
     UIViewController *newsVc = self.childViewControllers[index];
     [newsVc didMoveToParentViewController:self];
     if (newsVc.view.superview) return;
-    newsVc.view.frame = CGRectMake(scrollView.bounds.origin.x, 0, scrollView.bounds.size.width,self.view.bounds.size.height);
+    newsVc.view.frame = CGRectMake(scrollView.bounds.origin.x*index, 0, scrollView.bounds.size.width,self.view.bounds.size.height);
     [self.boardViewScrollView addSubview:newsVc.view];
+
     
 }
 
@@ -61,7 +62,7 @@
     [newsVc didMoveToParentViewController:self];
     if (newsVc.view.superview) return;
     
-    newsVc.view.frame = CGRectMake(scrollView.bounds.origin.x, 0, scrollView.bounds.size.width,self.view.bounds.size.height);
+    newsVc.view.frame = CGRectMake(scrollView.bounds.origin.x*index, 0, scrollView.bounds.size.width,self.view.bounds.size.height);
     [self.boardViewScrollView addSubview:newsVc.view];
 }
 

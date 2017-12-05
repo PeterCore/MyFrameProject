@@ -13,6 +13,7 @@
 #import "QXTrackCorrectManager.h"
 #import "NSObject+LKDBHelper.h"
 #import "QXBaseViewController.h"
+#import "NSObject+Language.h"
 @interface AppDelegate ()
 
 @end
@@ -40,6 +41,19 @@
     [self.window makeKeyAndVisible];
     self.window.frame = [[UIScreen mainScreen] bounds];
     //NSLog(@"frame is %f",self.window.frame.size.height);
+    
+    NSObject *language1 = [[NSObject alloc] init];
+    language1.languageKey = @"121";
+    ZCLanguageMakeModel *model = [[ZCLanguageMakeModel alloc] init];
+    model.content = @"21212";
+    model.fontName = @"21212";
+    language1.makerAttribute = model;
+    
+    NSObject *language2 = [[NSObject alloc] init];
+    language2.languageKey = @"124";
+    
+    NSLog(@"language1 key is %@,language2 is %@,language1 model is %@",language1.languageKey , language2.languageKey,language1.makerAttribute);
+    int i = 0;
 
 }
 

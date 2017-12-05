@@ -18,6 +18,8 @@
 #import "MapTestViewController.h"
 #import "NavigtionTestViewController.h"
 #import "MapTestViewController.h"
+#import "UILabel+Language.h"
+#import "ZCLanguageManager.h"
 @interface QXDLoginViewController ()<UITextFieldDelegate>{
 
 }
@@ -85,14 +87,52 @@
     }];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.font = [UIFont systemFontOfSize:15];
+    titleLabel.makeLanguage(@"订单详情");
+    titleLabel.textColor = [UIColor blackColor];
+    titleLabel.adjustsFontSizeToFitWidth = YES;
+    [self.view addSubview:titleLabel];
+    NSLog(@"attributedText is %@",titleLabel.attributedText);
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@20);
+        make.right.equalTo(self.view.mas_right).offset(-20);
+        make.top.equalTo(sender2.mas_bottom).offset(12);
+        make.height.equalTo(@44);
+    }];
+    
+    
+    UILabel *titleLabel_1 = [[UILabel alloc] init];
+    //titleLabel_1.font = [UIFont systemFontOfSize:15];
+    NSMutableAttributedString *mutble = [[NSMutableAttributedString alloc]initWithString:@"选择结束时间"];
+    [mutble addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, 6)];
+    [mutble addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:20] range:NSMakeRange(0, 6)];
+    titleLabel_1.makeAttributeLanguage(mutble);
+    titleLabel_1.adjustsFontSizeToFitWidth = YES;
+    NSLog(@"text is %@",titleLabel.text);
+    [self.view addSubview:titleLabel_1];
+    [titleLabel_1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@20);
+        make.right.equalTo(self.view.mas_right).offset(-20);
+        make.top.equalTo(titleLabel.mas_bottom).offset(12);
+        make.height.equalTo(@44);
+    }];
+    
     //[self __layout];
-    [self layoutMapView];
+    //[self layoutMapView];
     //[self launchLocation];
 }
 
 -(void)senderClick:(UIButton*)sender{
     if (sender.tag == 1) {
-        [[QXTrackCorrectManager shareManager] removeALLTraceLocations];
+        if ([[ZCLanguageManager shareManager] fetchLanguage] == LanguageType_ChineseSimple) {
+            [[ZCLanguageManager shareManager] switchLanguageType:LanguageType_EngLish];
+        }
+        else{
+            [[ZCLanguageManager shareManager] switchLanguageType:LanguageType_ChineseSimple];
+        }
+        //[[QXTrackCorrectManager shareManager] removeALLTraceLocations];
     }
     else if(sender.tag == 2){
         MapTestViewController *mapTestVc = [[MapTestViewController alloc] init];

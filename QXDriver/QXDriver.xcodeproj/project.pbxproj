@@ -181,6 +181,11 @@
 		77E59C271FD061AB003FE46D /* zhuanche_map_icon_car.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C241FD061AA003FE46D /* zhuanche_map_icon_car.png */; };
 		77E59C281FD061AB003FE46D /* zhuanche_map_icon_car@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C251FD061AA003FE46D /* zhuanche_map_icon_car@3x.png */; };
 		77E59C291FD061AB003FE46D /* zhuanche_map_icon_car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C261FD061AA003FE46D /* zhuanche_map_icon_car@2x.png */; };
+		77E59C2E1FD12E9A003FE46D /* ZCLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E59C2D1FD12E9A003FE46D /* ZCLanguageManager.m */; };
+		77E59C311FD13883003FE46D /* NSObject+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E59C301FD13883003FE46D /* NSObject+Language.m */; };
+		77E59C341FD142A1003FE46D /* ZCLanguageMakeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E59C331FD142A1003FE46D /* ZCLanguageMakeModel.m */; };
+		77E59C371FD15404003FE46D /* UILabel+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E59C361FD15404003FE46D /* UILabel+Language.m */; };
+		77E59C391FD157A8003FE46D /* ZCLanguage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77E59C381FD157A8003FE46D /* ZCLanguage.plist */; };
 		77E7F7AB1FA870E9008D3353 /* QXBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7F7AA1FA870E9008D3353 /* QXBaseRequest.m */; };
 		D9AE7D2B1477E8E72000056C /* Pods_QXDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362D8C6EABD15A14B993BB21 /* Pods_QXDriver.framework */; };
 /* End PBXBuildFile section */
@@ -524,6 +529,16 @@
 		77E59C241FD061AA003FE46D /* zhuanche_map_icon_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhuanche_map_icon_car.png; sourceTree = "<group>"; };
 		77E59C251FD061AA003FE46D /* zhuanche_map_icon_car@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuanche_map_icon_car@3x.png"; sourceTree = "<group>"; };
 		77E59C261FD061AA003FE46D /* zhuanche_map_icon_car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuanche_map_icon_car@2x.png"; sourceTree = "<group>"; };
+		77E59C2B1FD126C2003FE46D /* ZCLanguageConfigueration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCLanguageConfigueration.h; sourceTree = "<group>"; };
+		77E59C2C1FD12E9A003FE46D /* ZCLanguageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCLanguageManager.h; sourceTree = "<group>"; };
+		77E59C2D1FD12E9A003FE46D /* ZCLanguageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCLanguageManager.m; sourceTree = "<group>"; };
+		77E59C2F1FD13883003FE46D /* NSObject+Language.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Language.h"; sourceTree = "<group>"; };
+		77E59C301FD13883003FE46D /* NSObject+Language.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Language.m"; sourceTree = "<group>"; };
+		77E59C321FD142A1003FE46D /* ZCLanguageMakeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCLanguageMakeModel.h; sourceTree = "<group>"; };
+		77E59C331FD142A1003FE46D /* ZCLanguageMakeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCLanguageMakeModel.m; sourceTree = "<group>"; };
+		77E59C351FD15404003FE46D /* UILabel+Language.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Language.h"; sourceTree = "<group>"; };
+		77E59C361FD15404003FE46D /* UILabel+Language.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Language.m"; sourceTree = "<group>"; };
+		77E59C381FD157A8003FE46D /* ZCLanguage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ZCLanguage.plist; sourceTree = "<group>"; };
 		77E7F7A91FA870E9008D3353 /* QXBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXBaseRequest.h; sourceTree = "<group>"; };
 		77E7F7AA1FA870E9008D3353 /* QXBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXBaseRequest.m; sourceTree = "<group>"; };
 		A5D243632DDEC2C8D6A6D85F /* Pods-QXDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QXDriver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QXDriver/Pods-QXDriver.debug.xcconfig"; sourceTree = "<group>"; };
@@ -957,6 +972,7 @@
 		77C3A7611F666C640079EBA5 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				77E59C2A1FD1266F003FE46D /* Languages */,
 				77E5975B1FCB115C003FE46D /* Helper */,
 				77469B091FB031160060C689 /* sharePlatform */,
 				779510CC1FAC177900EC804A /* iflyMsc */,
@@ -1570,6 +1586,23 @@
 			path = BaseViewController;
 			sourceTree = "<group>";
 		};
+		77E59C2A1FD1266F003FE46D /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				77E59C2B1FD126C2003FE46D /* ZCLanguageConfigueration.h */,
+				77E59C321FD142A1003FE46D /* ZCLanguageMakeModel.h */,
+				77E59C331FD142A1003FE46D /* ZCLanguageMakeModel.m */,
+				77E59C2C1FD12E9A003FE46D /* ZCLanguageManager.h */,
+				77E59C2D1FD12E9A003FE46D /* ZCLanguageManager.m */,
+				77E59C351FD15404003FE46D /* UILabel+Language.h */,
+				77E59C361FD15404003FE46D /* UILabel+Language.m */,
+				77E59C2F1FD13883003FE46D /* NSObject+Language.h */,
+				77E59C301FD13883003FE46D /* NSObject+Language.m */,
+				77E59C381FD157A8003FE46D /* ZCLanguage.plist */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
 		973359B5CAA3129E075E8B63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1749,6 +1782,7 @@
 				77C3A75F1F666BBD0079EBA5 /* LaunchImage.xcassets in Resources */,
 				77C3A7CC1F6671A50079EBA5 /* MJRefresh.bundle in Resources */,
 				77C3B0361F6A89E90079EBA5 /* nav_icon_back_gray@3x.png in Resources */,
+				77E59C391FD157A8003FE46D /* ZCLanguage.plist in Resources */,
 				77DB6FCC1F74AF1C0016AB61 /* nav_logo_gray@3x.png in Resources */,
 				77E59C1E1FCE82EA003FE46D /* default_navi_route_startpoint@2x.png in Resources */,
 				77E59C1B1FCE82EA003FE46D /* default_navi_route_endpoint@2x.png in Resources */,
@@ -1860,6 +1894,7 @@
 				77C3AFF61F6906BC0079EBA5 /* UIView+DrawRoundCorner.m in Sources */,
 				77C3A7C31F6671A50079EBA5 /* MJRefreshAutoGifFooter.m in Sources */,
 				775A72F11FBEC9A000D99465 /* NavigtionTestViewController.m in Sources */,
+				77E59C311FD13883003FE46D /* NSObject+Language.m in Sources */,
 				77C3B0201F6917830079EBA5 /* DES.m in Sources */,
 				77C3B0261F6994830079EBA5 /* QXDataManager.m in Sources */,
 				77C3A8421F6680E20079EBA5 /* QXDLoginViewController.m in Sources */,
@@ -1890,6 +1925,7 @@
 				77C3B01B1F6917830079EBA5 /* NSData+QXUtils.m in Sources */,
 				77C3A7FB1F6673D60079EBA5 /* NSString+MJExtension.m in Sources */,
 				77DB6FD31F74E21B0016AB61 /* QXSliderBlock.m in Sources */,
+				77E59C371FD15404003FE46D /* UILabel+Language.m in Sources */,
 				77E5976D1FCB115C003FE46D /* NSObject+LKModel.m in Sources */,
 				77C3A7F81F6673D60079EBA5 /* NSObject+MJCoding.m in Sources */,
 				77C3A83A1F667E700079EBA5 /* GVUserDefaults+FEProperties.m in Sources */,
@@ -1916,6 +1952,7 @@
 				77C3B6E71F9F43E500083380 /* ZCNetWorkConfiguer.m in Sources */,
 				77C3A7C21F6671A50079EBA5 /* MJRefreshHeader.m in Sources */,
 				77C3B6E51F9F43E500083380 /* ZCConfiguerRequest.m in Sources */,
+				77E59C341FD142A1003FE46D /* ZCLanguageMakeModel.m in Sources */,
 				773DB4791F724B9C005CA6D0 /* QXMineViewController.m in Sources */,
 				77C3A7F21F6673D60079EBA5 /* MJExtensionConst.m in Sources */,
 				77C3B01A1F6917830079EBA5 /* NSArray+QXUtils.m in Sources */,
@@ -1944,6 +1981,7 @@
 				77C3A7CF1F6671A50079EBA5 /* UIScrollView+MJRefresh.m in Sources */,
 				77C3A8341F667A0F0079EBA5 /* ZCNavgtionbarOverlay.m in Sources */,
 				77E5976B1FCB115C003FE46D /* LKDBUtils.m in Sources */,
+				77E59C2E1FD12E9A003FE46D /* ZCLanguageManager.m in Sources */,
 				77B77BD01FC2C7D20030EE14 /* ZCKalmanAlgorithm.m in Sources */,
 				77C3A83F1F6680160079EBA5 /* EBCardCollectionViewLayout.m in Sources */,
 				77E597691FCB115C003FE46D /* LKDB+Mapping.m in Sources */,
