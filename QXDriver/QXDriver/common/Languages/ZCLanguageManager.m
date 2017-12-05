@@ -8,6 +8,7 @@
 
 #import "ZCLanguageManager.h"
 #import "UILabel+Language.h"
+#import "UIButton+Language.h"
 @interface ZCLanguageManager()
 @property(nonatomic,strong)NSString *fileName;
 @property(nonatomic,strong)NSMutableDictionary *controls;
@@ -46,6 +47,10 @@ static ZCLanguageManager *__manager = nil;
             UILabel *langLabel = (UILabel*)view;
             [langLabel switchLanguage];
         }
+        else if ([view isKindOfClass:[UIButton class]]){
+            UIButton *LangButton = (UIButton*)view;
+            [LangButton switchLanguage];
+        }
         [self unlock];
     }];
     
@@ -60,11 +65,12 @@ static ZCLanguageManager *__manager = nil;
     }
 }
 
--(void)removeControlWithHash:(NSString *)hash
+-(void)removeControlWithHash:(NSUInteger)hash
 {
-    id exist_control = [self.controls objectForKey:hash];
+    NSString *hasKey = [NSString stringWithFormat:@"%ld",hash];
+    id exist_control = [self.controls objectForKey:hasKey];
     if (exist_control) {
-        [self.controls removeObjectForKey:hash];
+        [self.controls removeObjectForKey:hasKey];
     }
 }
 

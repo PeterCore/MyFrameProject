@@ -17,5 +17,5 @@
 -(NSString*)readLanguageWithKey:(NSString*)key languageType:(LanguageType)type;
 -(LanguageType)fetchLanguage;
 -(void)addControls:(UIView*)control;
--(void)removeControlWithHash:(NSString*)hash;
+-(void)removeControlWithHash:(NSUInteger)hash;
 @end

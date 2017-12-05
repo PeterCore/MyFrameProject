@@ -13,6 +13,6 @@
 @property(nonatomic,strong,setter=setLanguageKey:)NSString *languageKey;
 @property(nonatomic,strong,setter=setAttributeString:)NSMutableAttributedString *attributeString;
 @property(nonatomic,strong)ZCLanguageMakeModel *makerAttribute;
-//-(void)switchLanguage;
+-(void)switchLanguage;
 //-(void)swithLanguage;
 @end

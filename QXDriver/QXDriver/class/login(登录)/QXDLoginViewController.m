@@ -19,6 +19,7 @@
 #import "NavigtionTestViewController.h"
 #import "MapTestViewController.h"
 #import "UILabel+Language.h"
+#import "UIButton+Language.h"
 #import "ZCLanguageManager.h"
 @interface QXDLoginViewController ()<UITextFieldDelegate>{
 
@@ -65,6 +66,7 @@
     UIButton *sender1 = [[UIButton alloc] init];
     sender1.tag = 2;
     sender1.backgroundColor = [UIColor blueColor];
+    
     [sender1 addTarget:self action:@selector(senderClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:sender1];
     [sender1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -76,6 +78,10 @@
 
     UIButton *sender2 = [[UIButton alloc] init];
     sender2.tag = 3;
+    sender2.makeTitle(@"结束时间",UIControlStateNormal);
+    sender2.makeTitle(@"选择结束时间",UIControlStateSelected);
+    [sender2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [sender2 setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
     sender2.backgroundColor = [UIColor greenColor];
     [sender2 addTarget:self action:@selector(senderClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:sender2];

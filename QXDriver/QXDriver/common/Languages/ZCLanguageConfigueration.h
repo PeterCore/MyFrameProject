@@ -33,4 +33,7 @@ typedef UIView*(^ZCConfiguerationColorLanguageBlock)(UIColor *color);
 typedef UIView*(^ZCConfiguerationMutableAttributeLanguageBlock)(NSMutableAttributedString *attribute);
 #define ZCConfiguerationMutableAttributeLanguageBlock(attribute) ^UIView* (NSMutableAttributedString *attribute)
 
+typedef UIView*(^ZCConfiguerationButtonLanguageBlock)(NSString *title, UIControlState state);
+#define ZCConfiguerationButtonLanguageBlock(title,state) ^UIView* (NSString *title, UIControlState state)
+
 #endif /* ZCLanguageConfigueration_h */

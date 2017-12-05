@@ -100,6 +100,6 @@
 }
 
 -(void)dealloc{
-    
+    [[ZCLanguageManager shareManager] removeControlWithHash:self.hash];
 }
 @end

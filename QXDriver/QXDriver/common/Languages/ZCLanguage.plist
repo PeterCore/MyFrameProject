@@ -11,13 +11,13 @@
 	<key>选择结束时间</key>
 	<array>
 		<string>选择结束时间</string>
-		<string>endTime</string>
+		<string>pickEndTime</string>
 		<string>選擇結束時間</string>
 	</array>
 	<key>结束时间</key>
 	<array>
 		<string>结束时间</string>
-		<string>结束时间</string>
+		<string>endTime</string>
 		<string>結束時間</string>
 	</array>
 	<key>选择开始时间</key>

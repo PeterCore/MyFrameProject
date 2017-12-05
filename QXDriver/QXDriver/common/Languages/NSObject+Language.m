@@ -44,10 +44,10 @@ static  char kLanguageAttribute;
     objc_setAssociatedObject(self, &kLanguageAttribute, makerAttribute, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-//-(void)switchLanguage
-//{
-//    
-//}
+-(void)switchLanguage
+{
+    
+}
 
 
 @end
