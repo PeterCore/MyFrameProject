@@ -197,18 +197,19 @@ int i  = 0;
         QXTraceLocation *TraceLocation = [[QXTraceLocation alloc] init];
         TraceLocation.longitude = naviLocation.coordinate.longitude;
         TraceLocation.latitude = naviLocation.coordinate.latitude;
-        //TraceLocation.currentDate = [NSDate date];
+        TraceLocation.currentDate = [NSDate date];
         TraceLocation.timestamp = naviLocation.timestamp;
         TraceLocation.speed = naviLocation.speed;
         TraceLocation.accuracy = naviLocation.accuracy;
         TraceLocation.altitude = naviLocation.altitude;
-    
+        //[QXTraceLocation insertToDB:TraceLocation];
+
 
         if (naviLocation.coordinate.latitude >0) {
-            
+
             [self filterLocation:TraceLocation];
 //
-        
+
         }
     }
        
@@ -221,20 +222,22 @@ int i  = 0;
         
 ////
 ////    //});
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            if (i<1) {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (i<2) {
                 i++;
                 QXTraceLocation *TraceLocationJump = [[QXTraceLocation alloc] init];
-                TraceLocationJump.longitude = naviLocation.coordinate.longitude+0.0160100;
-                TraceLocationJump.latitude = naviLocation.coordinate.latitude-0.0160100;
+                TraceLocationJump.longitude = naviLocation.coordinate.longitude+0.0001600;
+                TraceLocationJump.latitude = naviLocation.coordinate.latitude-0.0001300;
                 TraceLocationJump.currentDate = [NSDate date];
-                TraceLocationJump.speed = naviLocation.speed+120;
+                TraceLocationJump.speed = naviLocation.speed;
                 TraceLocationJump.accuracy = naviLocation.accuracy;
                 TraceLocationJump.timestamp = naviLocation.timestamp;
                 TraceLocationJump.speed = naviLocation.speed;
-                TraceLocationJump.accuracy = naviLocation.accuracy;
+                TraceLocationJump.accuracy = 120;
                 TraceLocationJump.altitude = naviLocation.altitude;
                 [self filterLocation:TraceLocationJump];
+                //[QXTraceLocation insertToDB:TraceLocationJump];
+
             }
 
                

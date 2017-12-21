@@ -15,7 +15,8 @@
 
 +(ZCMatrix*)initWithDimensions:(NSUInteger)rows colunms:(NSUInteger)columns;
 +(ZCMatrix*) rows:(NSUInteger)rows columns:(NSUInteger)column values:(double)m,...;
-// C = A^T
+
+
 -(ZCMatrix*) transpose;
 -(ZCMatrix*) invertmatrix;
 

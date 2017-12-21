@@ -85,8 +85,8 @@
 
 -(ZCMatrix*) add:(ZCMatrix*)B
 {
-    NSAssert(_rows==B.rows, @"Method Add: Matrixes haven't same number of rows: %lu ≠ %lu", (unsigned long)_rows, (unsigned long)B.rows);
-    NSAssert(_columns==B.columns, @"Method Add: Matrixes haven't same number of columns : %lu ≠ %lu", (unsigned long)_columns, (unsigned long)B.columns);
+    NSAssert(_rows==B.rows, @"Matrixes haven't same number of rows: %lu ≠ %lu", (unsigned long)_rows, (unsigned long)B.rows);
+    NSAssert(_columns==B.columns, @"Matrixes haven't same number of columns : %lu ≠ %lu", (unsigned long)_columns, (unsigned long)B.columns);
     
     ZCMatrix* output = [ZCMatrix initWithDimensions:_rows colunms:_columns];
     vDSP_vaddD(self.data, 1, B.data, 1, output.data, 1, _rows*_columns);
@@ -96,8 +96,8 @@
 }
 -(ZCMatrix*) sub:(ZCMatrix*)B
 {
-    NSAssert(_rows==B.rows, @"Method Substract: Matrixes haven't same number of rows: %lu ≠ %lu", (unsigned long)_rows, (unsigned long)B.rows);
-    NSAssert(_columns==B.columns, @"Method Substract: Matrixes haven't same number of columns : %lu ≠ %lu", (unsigned long)_columns, (unsigned long)B.columns);
+    NSAssert(_rows==B.rows, @"Matrixes haven't same number of rows: %lu ≠ %lu", (unsigned long)_rows, (unsigned long)B.rows);
+    NSAssert(_columns==B.columns, @"Matrixes haven't same number of columns : %lu ≠ %lu", (unsigned long)_columns, (unsigned long)B.columns);
     double neg = -1.0;
     
     ZCMatrix* output = [ZCMatrix initWithDimensions:_rows colunms:_columns];
@@ -108,13 +108,13 @@
 
 -(ZCMatrix*) multiplyByTransposeOf:(ZCMatrix*)B
 {
-    NSAssert(_columns==B.columns, @"Method multiplyByTransposeOf: Left Matrix number of columns ≠ Right Matrix number of columns: %lu ≠ %lu", (unsigned long)_columns, (unsigned long)B.columns);
+    NSAssert(_columns==B.columns, @"Left Matrix number of columns ≠ Right Matrix number of columns: %lu ≠ %lu", (unsigned long)_columns, (unsigned long)B.columns);
     return [self multiplyBy:[B transpose]];
 }
 
 -(ZCMatrix*) multiplyBy:(ZCMatrix*)B
 {
-    NSAssert(_columns==B.rows, @"Method Multiply: Left Matrix number of columns ≠ Right Matrix number of Rows: %lu ≠ %lu", (unsigned long)_columns, (unsigned long)B.rows);
+    NSAssert(_columns==B.rows, @"Left Matrix number of columns ≠ Right Matrix number of Rows: %lu ≠ %lu", (unsigned long)_columns, (unsigned long)B.rows);
     ZCMatrix* output = [ZCMatrix initWithDimensions:_rows colunms:B.columns];
     vDSP_mmulD(self.data, 1, B.data, 1, output.data, 1, _rows, B.columns, _columns);
     return output;

@@ -126,19 +126,19 @@
     }];
     
     //[self __layout];
-    //[self layoutMapView];
+     //[self layoutMapView];
     //[self launchLocation];
 }
 
 -(void)senderClick:(UIButton*)sender{
     if (sender.tag == 1) {
-        if ([[ZCLanguageManager shareManager] fetchLanguage] == LanguageType_ChineseSimple) {
-            [[ZCLanguageManager shareManager] switchLanguageType:LanguageType_EngLish];
-        }
-        else{
-            [[ZCLanguageManager shareManager] switchLanguageType:LanguageType_ChineseSimple];
-        }
-        //[[QXTrackCorrectManager shareManager] removeALLTraceLocations];
+//        if ([[ZCLanguageManager shareManager] fetchLanguage] == LanguageType_ChineseSimple) {
+//            [[ZCLanguageManager shareManager] switchLanguageType:LanguageType_EngLish];
+//        }
+//        else{
+//            [[ZCLanguageManager shareManager] switchLanguageType:LanguageType_ChineseSimple];
+//        }
+         [[QXTrackCorrectManager shareManager] removeALLTraceLocations];
     }
     else if(sender.tag == 2){
         MapTestViewController *mapTestVc = [[MapTestViewController alloc] init];

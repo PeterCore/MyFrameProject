@@ -129,7 +129,7 @@ static QXTrackCorrectManager *__manager = nil;
         }
         if (!self.w2TraceLocation) {
             long offsetTimeMils = [traceLocation.currentDate timeIntervalSince1970] - [self.w1TraceLocation.currentDate timeIntervalSince1970];
-            long offsetSeconds = offsetTimeMils;
+            long offsetSeconds = offsetTimeMils+1;
             MAMapPoint startPoint = MAMapPointForCoordinate(CLLocationCoordinate2DMake(self.w1TraceLocation.latitude , self.w1TraceLocation.longitude));
             MAMapPoint endPoint = MAMapPointForCoordinate(CLLocationCoordinate2DMake(traceLocation.latitude , traceLocation.longitude));
             float distance = MAMetersBetweenMapPoints(startPoint, endPoint);
@@ -157,8 +157,6 @@ static QXTrackCorrectManager *__manager = nil;
                         
                         [self lock];
                         if (self.filterJumpLocationBlock) {
-                            
-                            
                             self.filterJumpLocationBlock(traceLocation);
                         }
                         [self unlock];
@@ -177,7 +175,7 @@ static QXTrackCorrectManager *__manager = nil;
 #pragma mark ---- w2TraceLocation is not null
         else{
             long offsetTimeMils = [traceLocation.currentDate timeIntervalSince1970] - [self.w2TraceLocation.currentDate timeIntervalSince1970];
-            long offsetSeconds = offsetTimeMils;
+            long offsetSeconds = offsetTimeMils+1;
             MAMapPoint startPoint = MAMapPointForCoordinate(CLLocationCoordinate2DMake(self.w2TraceLocation.latitude , self.w2TraceLocation.longitude));
             MAMapPoint endPoint = MAMapPointForCoordinate(CLLocationCoordinate2DMake(traceLocation.latitude , traceLocation.longitude));
             float distance = MAMetersBetweenMapPoints(startPoint, endPoint);

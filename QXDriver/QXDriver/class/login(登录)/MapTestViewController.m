@@ -13,7 +13,7 @@
 
 @interface MapTestViewController ()
 @property(nonatomic,strong)QXLocationInfo *mylocationinfo;
-@property(nonatomic,strong)QXGMapView *gmap;
+@property(nonatomic,strong)QXAMapView *gmap;
 @end
 
 @implementation MapTestViewController
@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.gmap = [[QXGMapView alloc] initWithFrame:self.view.bounds];
+    self.gmap = [[QXAMapView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.gmap];
     
 }
@@ -31,10 +31,10 @@
     if (!self.mylocationinfo) {
         self.mylocationinfo = locationInfo;
         [[QXCLLocationManager shareManager] stopUpdating];
-        CLLocationCoordinate2D orgin = CLLocationCoordinate2DMake(locationInfo.userLocation.coordinate.latitude, locationInfo.userLocation.coordinate.longitude);
-        CLLocationCoordinate2D dest = CLLocationCoordinate2DMake(24.473523, 118.19098099999999);
-        [self.gmap addAnnotationsWithOriginCoordinateAnddestCoordinate:orgin dest:dest];
-        [self.gmap updateCurrentLocation:locationInfo];
+//        CLLocationCoordinate2D orgin = CLLocationCoordinate2DMake(locationInfo.userLocation.coordinate.latitude, locationInfo.userLocation.coordinate.longitude);
+//        CLLocationCoordinate2D dest = CLLocationCoordinate2DMake(24.473523, 118.19098099999999);
+//        [self.gmap addAnnotationsWithOriginCoordinateAnddestCoordinate:orgin dest:dest];
+//        //[self.gmap updateCurrentLocation:locationInfo];
 
         //            AMapGeoPoint *orignPoint = [AMapGeoPoint locationWithLatitude:orgin.latitude longitude:orgin.longitude];
         //            AMapGeoPoint *destPoint = [AMapGeoPoint locationWithLatitude:dest.latitude longitude:dest.longitude];
@@ -43,7 +43,7 @@
         //            [naviView calculateDriveRouteWithStartPoints:@[orignPoint] endPoints:@[destPoint] wayPoints:nil drivingStrategy:AMapNaviDrivingStrategySingleDefault];
     }
     else{
-        [self.gmap updateCurrentLocation:locationInfo];
+        //[self.gmap updateCurrentLocation:locationInfo];
     }
 }
 -(void)dealloc{

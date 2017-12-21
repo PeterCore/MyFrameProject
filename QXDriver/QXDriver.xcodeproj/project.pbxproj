@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		772690AF1FD69863007CDB3E /* UIButton+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 772690AE1FD69863007CDB3E /* UIButton+Language.m */; };
+		772690B21FD7822C007CDB3E /* UITextField+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 772690B11FD7822C007CDB3E /* UITextField+Language.m */; };
 		773DB46C1F724AEE005CA6D0 /* QXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773DB46B1F724AEE005CA6D0 /* QXHomeViewController.m */; };
 		773DB4791F724B9C005CA6D0 /* QXMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773DB4781F724B9C005CA6D0 /* QXMineViewController.m */; };
 		773DB4821F724C9E005CA6D0 /* QXOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773DB4811F724C9E005CA6D0 /* QXOrderListViewController.m */; };
@@ -213,6 +214,8 @@
 		362D8C6EABD15A14B993BB21 /* Pods_QXDriver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QXDriver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		772690AD1FD69863007CDB3E /* UIButton+Language.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Language.h"; sourceTree = "<group>"; };
 		772690AE1FD69863007CDB3E /* UIButton+Language.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Language.m"; sourceTree = "<group>"; };
+		772690B01FD7822C007CDB3E /* UITextField+Language.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Language.h"; sourceTree = "<group>"; };
+		772690B11FD7822C007CDB3E /* UITextField+Language.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Language.m"; sourceTree = "<group>"; };
 		773DB46A1F724AEE005CA6D0 /* QXHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXHomeViewController.h; sourceTree = "<group>"; };
 		773DB46B1F724AEE005CA6D0 /* QXHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXHomeViewController.m; sourceTree = "<group>"; };
 		773DB4771F724B9C005CA6D0 /* QXMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXMineViewController.h; sourceTree = "<group>"; };
@@ -1601,6 +1604,8 @@
 				77E59C361FD15404003FE46D /* UILabel+Language.m */,
 				772690AD1FD69863007CDB3E /* UIButton+Language.h */,
 				772690AE1FD69863007CDB3E /* UIButton+Language.m */,
+				772690B01FD7822C007CDB3E /* UITextField+Language.h */,
+				772690B11FD7822C007CDB3E /* UITextField+Language.m */,
 				77E59C2F1FD13883003FE46D /* NSObject+Language.h */,
 				77E59C301FD13883003FE46D /* NSObject+Language.m */,
 				77E59C381FD157A8003FE46D /* ZCLanguage.plist */,
@@ -1919,6 +1924,7 @@
 				77C3B01E1F6917830079EBA5 /* AESCipher.m in Sources */,
 				77C3A7F91F6673D60079EBA5 /* NSObject+MJKeyValue.m in Sources */,
 				77C3B6E81F9F43E500083380 /* ZCRequestTask.m in Sources */,
+				772690B21FD7822C007CDB3E /* UITextField+Language.m in Sources */,
 				77E597681FCB115C003FE46D /* BaseDB.m in Sources */,
 				77C3A7CA1F6671A50079EBA5 /* MJRefreshNormalHeader.m in Sources */,
 				77C3B0001F6913DD0079EBA5 /* SVProgressHUD+HUB.m in Sources */,

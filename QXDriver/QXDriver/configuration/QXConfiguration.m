@@ -69,7 +69,7 @@ static QXConfiguration *configuration = nil;
  
 #pragma mark ----约约
     self.monetaryUnit = @"元";
-    self.mapType = MAPTYPE_GOOGLE;
+    self.mapType = MAPTYPE_GAODE;
     self.httpPrefixUrl = @"http://5000.gr2a2739.summersoft.ali-sh.goodrain.net:10080/";
     self.wsPrefixUrl = @"ws://gr46e996.summersoft.ali-sh-s1.goodrain.net:20630";
     self.loginType = QXDRIVERLOGINTYPE_SPECIALCAR;

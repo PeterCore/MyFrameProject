@@ -24,6 +24,9 @@ typedef UIView*(^ZCConfiguerationLanguageBlock)(NSString *languageKey);
 typedef UIView*(^ZCConfiguerationFontLanguageBlock)(UIFont *font);
 #define ZCConfiguerationFontLanguageBlock(font) ^UIView* (UIFont *font)
 
+typedef UIView*(^ZCConfiguerationFontSizeLanguageBlock)(NSInteger size);
+#define ZCConfiguerationFontSizeLanguageBlock(size) ^UIView* (NSInteger size)
+
 typedef UIView*(^ZCConfiguerationFontNameLanguageBlock)(NSString *fontName);
 #define ZCConfiguerationFontNameLanguageBlock(fontName) ^UIView* (NSString *fontName)
 

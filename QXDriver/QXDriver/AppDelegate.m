@@ -61,12 +61,12 @@
     
     NSRecursiveLock *locationLock = [[NSRecursiveLock alloc] init];
     [[QXCLLocationManager shareManager] startLocationUpdating:^(QXLocationInfo * _Nonnull locationInfo) {
-        for (id controller in [QXCLLocationManager shareManager].controllers) {
-             [locationLock lock];
-             ((void (*)(id, SEL, QXLocationInfo*,NSString*))objc_msgSend)(((QXBaseViewController*)controller), @selector(fetchCurrentLocation:failuerError:), locationInfo,@"");
-
-             [locationLock unlock];
-        }
+//        for (id controller in [QXCLLocationManager shareManager].controllers) {
+//             [locationLock lock];
+//             ((void (*)(id, SEL, QXLocationInfo*,NSString*))objc_msgSend)(((QXBaseViewController*)controller), @selector(fetchCurrentLocation:failuerError:), locationInfo,@"");
+//
+//             [locationLock unlock];
+//        }
        
         
         
